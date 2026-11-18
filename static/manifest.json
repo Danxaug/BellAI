@@ -1,0 +1,14 @@
+{
+  "name": "Bellia AI",
+  "short_name": "Bellia",
+  "icons": [
+    {
+      "src": "/static/img/carabellai.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#00E5FF",
+  "background_color": "#05070B",
+  "display": "standalone"
+}

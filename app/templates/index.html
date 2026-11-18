@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BELLAI — Máquinas de Ventas IA & Inteligencia de Datos</title>
+    <meta name="description" content="Instalamos agentes IA 24/7 en WhatsApp y auditamos miles de documentos en segundos. Diagnóstico técnico gratuito para empresas en Colombia.">
+
+    <meta name="theme-color" content="#00E5FF">
+    <link rel="canonical" href="https://bellai.ai/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bellai.ai/">
+    <meta property="og:title" content="BELLAI — Máquinas de Ventas IA & Inteligencia de Datos">
+    <meta property="og:description" content="Agentes IA 24/7 en WhatsApp. Auditoría masiva de documentos. Diagnóstico gratuito.">
+    <meta property="og:image" content="/static/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="BELLAI — Máquinas de Ventas IA">
+    <meta name="twitter:description" content="Agentes IA 24/7 en WhatsApp. Auditoría masiva de documentos.">
+    <meta name="twitter:image" content="/static/img/og-image.png">
+
+    <link rel="icon" type="image/png" href="/static/favicon/favicon.ico.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="/static/manifest.json">
+
+    <!-- CSS local (build de Tailwind, sin CDN) -->
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="/static/css/aos.css">
+
+    <!-- CSS Personalizado -->
+    <style>
+        .btn-shimmer {
+            position: relative;
+            overflow: hidden;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1;
+        }
+        
+        .btn-shimmer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(
+                to right,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0.4) 50%,
+                rgba(255, 255, 255, 0) 100%
+            );
+            transform: skewX(-25deg);
+            animation: shimmer 4s infinite;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        @keyframes shimmer {
+            0% { left: -100%; }
+            20% { left: 200%; }
+            100% { left: 200%; }
+        }
+
+        @keyframes pulse-cyan {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: .5; transform: scale(0.8); }
+        }
+        .animate-pulse-cyan {
+            animation: pulse-cyan 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+    </style>
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "BellAI",
+      "url": "https://bellai.ai",
+      "logo": "https://bellai.ai/static/img/carabellai.png",
+      "description": "Agencia de IA y automatización cognitiva",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Cali",
+        "addressCountry": "CO"
+      }
+    }
+    </script>
+</head>
+<body class="bg-[#05070B] text-slate-100 font-sans overflow-x-hidden">
+
+    <!-- Announcement -->
+    <div class="bg-gradient-to-r from-blue-900 via-[#05070B] to-cyan-900 text-center py-2 px-4 text-xs font-semibold text-cyan-300 border-b border-cyan-500/20">
+        {{ t.banner_text }}
+    </div>
+
+    <!-- Nav -->
+    <nav class="sticky top-0 z-40 bg-[#0D111A]/90 backdrop-blur border-b border-slate-800" aria-label="Navegación principal">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+            
+            <a href="/" class="flex items-center space-x-3 shrink-0" aria-label="Bellai Home">
+                <img src="/static/img/carabellai.png" alt="Logo Bellai" class="h-10 w-10 rounded-full border border-cyan-400 object-cover" fetchpriority="high">
+                <div class="flex items-baseline text-2xl md:text-3xl font-extrabold tracking-tight">
+                    <span class="text-white">bell</span><span class="text-cyan-400">AI</span>
+                </div>
+            </a>
+            
+            <div class="hidden md:flex items-center space-x-6 text-sm font-medium text-slate-300 mx-auto">
+                <a href="#servicios" class="hover:text-cyan-400 transition-colors duration-300">{{ t.nav_services }}</a>
+                <a href="#casos" class="hover:text-cyan-400 transition-colors duration-300">{{ t.nav_cases }}</a>
+                <a href="#calculadora" class="hover:text-cyan-400 transition-colors duration-300">{{ t.nav_calc }}</a>
+                <a href="#faq" class="hover:text-cyan-400 transition-colors duration-300">{{ t.nav_faq }}</a>
+
+                <div class="flex items-center gap-2 ml-2 shrink-0">
+                    <a href="/" title="Español" class="flex items-center justify-center transition-all duration-300 
+                        {% if lang == 'es' %} ring-2 ring-cyan-400 rounded-full shadow-[0_0_10px_rgba(34,211,238,0.5)] {% else %} opacity-50 hover:opacity-100 hover:scale-110 {% endif %}">
+                        <img src="/static/img/icono-es.png" alt="ES" style="width: 16px !important; height: 13px !important; border-radius: 2px !important; object-fit: cover !important; display: block !important;">
+                    </a>
+                    <a href="/en" title="English" class="flex items-center justify-center transition-all duration-300
+                        {% if lang == 'en' %} ring-2 ring-cyan-400 rounded-full shadow-[0_0_10px_rgba(34,211,238,0.5)] {% else %} opacity-50 hover:opacity-100 hover:scale-110 {% endif %}">
+                        <img src="/static/img/icono-en.png" alt="EN" style="width: 16px !important; height: 13px !important; border-radius: 2px !important; object-fit: cover !important; display: block !important;">
+                    </a>
+                </div>
+            </div>
+            
+            <a href="https://api.whatsapp.com/send?phone={{ whatsapp_phone }}&text=Hola%20Bellai,%20quiero%20agendar%20mi%20diagn%C3%B3stico%20gratuito"
+               target="_blank" rel="noopener noreferrer"
+               class="btn-shimmer bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs md:text-sm px-5 py-2.5 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(6,182,212,0.4)] focus-visible:ring-2 focus-visible:ring-cyan-300 whitespace-nowrap shrink-0">
+                {{ t.nav_cta }}
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="relative pt-12 pb-20 px-4 max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+        <div data-aos="fade-right">
+            <div class="inline-block px-3 py-1 bg-cyan-950/60 border border-cyan-500/40 rounded-full text-cyan-400 text-xs font-semibold mb-4">
+                {{ t.hero_badge }}
+            </div>
+            <h1 class="text-3xl md:text-5xl font-extrabold leading-tight text-white mb-6">
+                {{ t.hero_title_1 }} <span class="text-cyan-400">{{ t.hero_title_2 }}</span>
+            </h1>
+            <p class="text-slate-300 text-sm md:text-base mb-8 leading-relaxed">
+                {{ t.hero_desc }}
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+                <a href="#contacto" class="btn-shimmer bg-cyan-500 text-slate-950 font-bold px-6 py-3.5 rounded-xl text-center text-sm hover:bg-cyan-400 focus-visible:ring-2 focus-visible:ring-cyan-300 transition-colors duration-300">
+                    {{ t.hero_cta_1 }}
+                </a>
+                <a href="#casos" class="border border-slate-700 hover:border-cyan-500 text-slate-300 font-semibold px-6 py-3.5 rounded-xl text-center text-sm transition focus-visible:ring-2 focus-visible:ring-cyan-300">
+                    {{ t.hero_cta_2 }}
+                </a>
+            </div>
+        </div>
+        <div class="flex justify-center" data-aos="fade-left">
+            <div class="bg-gradient-to-b from-[#0D111A] to-[#05070B] border-2 border-cyan-500/50 p-5 rounded-3xl w-full max-w-md shadow-[0_0_50px_rgba(6,182,212,0.2),inset_0_0_20px_rgba(6,182,212,0.05)] relative">
+                <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-90 shadow-[0_0_10px_rgba(34,211,238,1)]"></div>
+                <div class="w-full h-[300px] rounded-2xl overflow-hidden bg-[#05070B] mb-5 border-2 border-cyan-400/80 flex justify-center items-center relative shadow-[0_0_25px_rgba(6,182,212,0.5),inset_0_0_20px_rgba(0,0,0,0.8)]">
+                    <div class="absolute inset-0 bg-gradient-to-t from-cyan-900/20 to-transparent pointer-events-none z-10"></div>
+                    <img src="/static/img/bellailogo.webp" alt="Mascota Bellai Cyber-Bulldog" class="w-full h-full object-cover object-center relative z-0" style="transform: scale(1.15);" loading="lazy" decoding="async">
+                </div>
+                <div class="bg-[#05070B]/90 p-4 rounded-xl border border-cyan-500/40 flex items-center justify-between shadow-[inset_0_0_15px_rgba(6,182,212,0.1)]">
+                    <div>
+                        <p class="text-[10px] uppercase tracking-wider text-slate-400 mb-0.5">{{ t.system_status }}</p>
+                        <p class="text-xs font-bold text-cyan-400 flex items-center gap-1.5">
+                            <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse-cyan shadow-[0_0_8px_rgba(34,211,238,0.8)]"></span>
+                            {{ t.active_agent }}
+                        </p>
+                    </div>
+                    <span class="text-[10px] font-semibold bg-cyan-950 text-cyan-300 px-3 py-1.5 rounded-md border border-cyan-500/30 shadow-[0_0_10px_rgba(6,182,212,0.2)]">DuckDB + Groq</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="border-y border-slate-800 bg-[#0D111A]/50 py-10 px-4" data-aos="fade-up">
+        <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div><p class="text-2xl md:text-3xl font-extrabold text-cyan-400">{{ t.stat_1_title }}</p><p class="text-xs text-slate-300 mt-1">{{ t.stat_1_desc }}</p></div>
+            <div><p class="text-2xl md:text-3xl font-extrabold text-white">{{ t.stat_2_title }}</p><p class="text-xs text-slate-300 mt-1">{{ t.stat_2_desc }}</p></div>
+            <div><p class="text-2xl md:text-3xl font-extrabold text-cyan-400">{{ t.stat_3_title }}</p><p class="text-xs text-slate-300 mt-1">{{ t.stat_3_desc }}</p></div>
+            <div><p class="text-2xl md:text-3xl font-extrabold text-white">{{ t.stat_4_title }}</p><p class="text-xs text-slate-300 mt-1">{{ t.stat_4_desc }}</p></div>
+        </div>
+    </section>
+
+    <!-- Casos -->
+    <section id="casos" class="py-20 px-4 max-w-6xl mx-auto">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-xs font-bold text-cyan-400 tracking-wider uppercase mb-2">{{ t.cases_subtitle }}</h2>
+            <h3 class="text-2xl md:text-4xl font-extrabold text-white">{{ t.cases_title }}</h3>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+            <a href="https://habla-con-los-contratos-cali.streamlit.app/" target="_blank" rel="noopener noreferrer" 
+               data-aos="fade-up" data-aos-delay="100"
+               class="group block p-6 rounded-3xl relative overflow-hidden bg-gradient-to-b from-[#0D111A] to-[#05070B] border-2 border-cyan-500/50 shadow-[0_0_35px_rgba(6,182,212,0.15),inset_0_0_15px_rgba(6,182,212,0.03)] transition-all duration-300 hover:-translate-y-2 hover:scale-[1.02] hover:border-cyan-400 hover:shadow-[0_20px_45px_-12px_rgba(6,182,212,0.45),inset_0_0_20px_rgba(6,182,212,0.15)]">
+                <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-90 shadow-[0_0_10px_rgba(34,211,238,1)]"></div>
+                <div class="relative z-10">
+                    <span class="text-xs bg-blue-950 text-blue-300 px-2.5 py-1 rounded-full font-bold">{{ t.case_1_tag }}</span>
+                    <h4 class="text-xl font-bold text-white mt-4 mb-2 transition-all duration-300 group-hover:text-cyan-400 group-hover:drop-shadow-[0_0_15px_rgba(34,211,238,0.7)]">{{ t.case_1_title }}</h4>
+                    <p class="text-xs text-slate-300 leading-relaxed mb-4">{{ t.case_1_desc }}</p>
+                </div>
+                <div class="border-t border-slate-800 pt-3 text-xs text-cyan-400 font-semibold relative z-10">{{ t.case_1_tech }}</div>
+            </a>
+
+            <a href="https://tienda-inositol.onrender.com/" target="_blank" rel="noopener noreferrer" 
+               data-aos="fade-up" data-aos-delay="200"
+               class="group block p-6 rounded-3xl relative overflow-hidden bg-gradient-to-b from-[#0D111A] to-[#05070B] border-2 border-cyan-500/50 shadow-[0_0_35px_rgba(6,182,212,0.15),inset_0_0_15px_rgba(6,182,212,0.03)] transition-all duration-300 hover:-translate-y-2 hover:scale-[1.02] hover:border-cyan-400 hover:shadow-[0_20px_45px_-12px_rgba(6,182,212,0.45),inset_0_0_20px_rgba(6,182,212,0.15)]">
+                <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-90 shadow-[0_0_10px_rgba(34,211,238,1)]"></div>
+                <div class="relative z-10">
+                    <span class="text-xs bg-emerald-950 text-emerald-300 px-2.5 py-1 rounded-full font-bold">{{ t.case_2_tag }}</span>
+                    <h4 class="text-xl font-bold text-white mt-4 mb-2 transition-all duration-300 group-hover:text-cyan-400 group-hover:drop-shadow-[0_0_15px_rgba(34,211,238,0.7)]">{{ t.case_2_title }}</h4>
+                    <p class="text-xs text-slate-300 leading-relaxed mb-4">{{ t.case_2_desc }}</p>
+                </div>
+                <div class="border-t border-slate-800 pt-3 text-xs text-cyan-400 font-semibold relative z-10">{{ t.case_2_tech }}</div>
+            </a>
+
+            <a href="https://disenoslogo18k.onrender.com/" target="_blank" rel="noopener noreferrer" 
+               data-aos="fade-up" data-aos-delay="300"
+               class="group block p-6 rounded-3xl relative overflow-hidden bg-gradient-to-b from-[#0D111A] to-[#05070B] border-2 border-cyan-500/50 shadow-[0_0_35px_rgba(6,182,212,0.15),inset_0_0_15px_rgba(6,182,212,0.03)] transition-all duration-300 hover:-translate-y-2 hover:scale-[1.02] hover:border-cyan-400 hover:shadow-[0_20px_45px_-12px_rgba(6,182,212,0.45),inset_0_0_20px_rgba(6,182,212,0.15)]">
+                <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-90 shadow-[0_0_10px_rgba(34,211,238,1)]"></div>
+                <div class="relative z-10">
+                    <span class="text-xs bg-amber-950 text-amber-300 px-2.5 py-1 rounded-full font-bold">{{ t.case_3_tag }}</span>
+                    <h4 class="text-xl font-bold text-white mt-4 mb-2 transition-all duration-300 group-hover:text-cyan-400 group-hover:drop-shadow-[0_0_15px_rgba(34,211,238,0.7)]">{{ t.case_3_title }}</h4>
+                    <p class="text-xs text-slate-300 leading-relaxed mb-4">{{ t.case_3_desc }}</p>
+                </div>
+                <div class="border-t border-slate-800 pt-3 text-xs text-cyan-400 font-semibold relative z-10">{{ t.case_3_tech }}</div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section id="servicios" class="py-20 bg-[#0D111A]/30 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-xs font-bold text-cyan-400 tracking-wider uppercase mb-2">{{ t.services_subtitle }}</h2>
+                <h3 class="text-2xl md:text-4xl font-extrabold text-white">{{ t.services_title }}</h3>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gradient-to-b from-[#0D111A] to-[#05070B] border-2 border-cyan-500/50 p-8 rounded-3xl relative overflow-hidden shadow-[0_0_35px_rgba(6,182,212,0.15),inset_0_0_15px_rgba(6,182,212,0.03)] transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400 hover:shadow-[0_20px_45px_-12px_rgba(6,182,212,0.45),inset_0_0_20px_rgba(6,182,212,0.15)]" data-aos="fade-up" data-aos-delay="100">
+                    <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-90 shadow-[0_0_10px_rgba(34,211,238,1)]"></div>
+                    <div class="text-3xl mb-4" aria-hidden="true">⚡</div>
+                    <h4 class="text-xl font-bold text-white mb-2">{{ t.service_1_title }}</h4>
+                    <p class="text-xs text-cyan-400 font-bold mb-4">{{ t.service_1_sub }}</p>
+                    <ul class="text-xs text-slate-300 space-y-2.5">
+                        <li>✓ {{ t.service_1_item_1 }}</li>
+                        <li>✓ {{ t.service_1_item_2 }}</li>
+                        <li>✓ {{ t.service_1_item_3 }}</li>
+                        <li>✓ {{ t.service_1_item_4 }}</li>
+                    </ul>
+                </div>
+                <div class="bg-gradient-to-b from-[#0D111A] to-[#05070B] border-2 border-cyan-500/50 p-8 rounded-3xl relative overflow-hidden shadow-[0_0_35px_rgba(6,182,212,0.15),inset_0_0_15px_rgba(6,182,212,0.03)] transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400 hover:shadow-[0_20px_45px_-12px_rgba(6,182,212,0.45),inset_0_0_20px_rgba(6,182,212,0.15)]" data-aos="fade-up" data-aos-delay="200">
+                    <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-90 shadow-[0_0_10px_rgba(34,211,238,1)]"></div>
+                    <div class="text-3xl mb-4" aria-hidden="true">🧠</div>
+                    <h4 class="text-xl font-bold text-white mb-2">{{ t.service_2_title }}</h4>
+                    <p class="text-xs text-blue-400 font-bold mb-4">{{ t.service_2_sub }}</p>
+                    <ul class="text-xs text-slate-300 space-y-2.5">
+                        <li>✓ {{ t.service_2_item_1 }}</li>
+                        <li>✓ {{ t.service_2_item_2 }}</li>
+                        <li>✓ {{ t.service_2_item_3 }}</li>
+                        <li>✓ {{ t.service_2_item_4 }}</li>
+                    </ul>
+                </div>
+                <div class="bg-gradient-to-b from-[#0D111A] to-[#05070B] border-2 border-cyan-500/50 p-8 rounded-3xl relative overflow-hidden shadow-[0_0_35px_rgba(6,182,212,0.15),inset_0_0_15px_rgba(6,182,212,0.03)] transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400 hover:shadow-[0_20px_45px_-12px_rgba(6,182,212,0.45),inset_0_0_20px_rgba(6,182,212,0.15)]" data-aos="fade-up" data-aos-delay="300">
+                    <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-90 shadow-[0_0_10px_rgba(34,211,238,1)]"></div>
+                    <div class="text-3xl mb-4" aria-hidden="true">🛡️</div>
+                    <h4 class="text-xl font-bold text-white mb-2">{{ t.service_3_title }}</h4>
+                    <p class="text-xs text-purple-400 font-bold mb-4">{{ t.service_3_sub }}</p>
+                    <ul class="text-xs text-slate-300 space-y-2.5">
+                        <li>✓ {{ t.service_3_item_1 }}</li>
+                        <li>✓ {{ t.service_3_item_2 }}</li>
+                        <li>✓ {{ t.service_3_item_3 }}</li>
+                        <li>✓ {{ t.service_3_item_4 }}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carrusel Tecnológico Infinito -->
+    <section id="tecnologia" class="py-16 bg-[#05070B] overflow-hidden" data-aos="fade-up">
+        <div class="max-w-6xl mx-auto px-4 text-center mb-10">
+            <h2 class="text-xs font-bold text-cyan-400 tracking-wider uppercase mb-2">{{ t.tech_subtitle }}</h2>
+            <p class="text-sm text-slate-400">{{ t.tech_desc }}</p>
+        </div>
+
+        <div class="relative w-full max-w-5xl mx-auto overflow-hidden group">
+            <div class="absolute top-0 left-0 w-24 h-full bg-gradient-to-r from-[#05070B] to-transparent z-10"></div>
+            <div class="absolute top-0 right-0 w-24 h-full bg-gradient-to-l from-[#05070B] to-transparent z-10"></div>
+
+            <div class="flex w-max animate-marquee group-hover:[animation-play-state:paused]">
+                <div class="flex items-center gap-16 px-8">
+                    <div class="flex flex-col items-center gap-3"><img src="/static/img/tech/python.svg" alt="Python" class="h-12 w-auto"><span class="text-xs text-slate-400 font-semibold">Python</span></div>
+                    <div class="flex flex-col items-center gap-3"><img src="/static/img/tech/fastapi.svg" alt="FastAPI" class="h-12 w-auto"><span class="text-xs text-slate-400 font-semibold">FastAPI</span></div>
+                    <div class="flex flex-col items-center gap-3"><img src="/static/img/tech/groq.svg" alt="Groq" class="h-12 w-auto"><span class="text-xs text-slate-400 font-semibold">Groq AI</span></div>
+                    <div class="flex flex-col items-center gap-3"><img src="/static/img/tech/duckdb.svg" alt="DuckDB" class="h-12 w-auto"><span class="text-xs text-slate-400 font-semibold">DuckDB</span></div>
+                    <div class="flex flex-col items-center gap-3"><img src="/static/img/tech/pandas.svg" alt="Pandas" class="h-12 w-auto"><span class="text-xs text-slate-400 font-semibold">Pandas</span></div>
+                    <div class="flex flex-col items-center gap-3"><img src="/static/img/tech/chromadb.svg" alt="ChromaDB" class="h-12 w-auto"><span class="text-xs text-slate-400 font-semibold">ChromaDB</span></div>
+                    <div class="flex flex-col items-center gap-3"><img src="/static/img/tech/tailwind.svg" alt="Tailwind" class="h-12 w-auto"><span class="text-xs text-slate-400 font-semibold">Tailwind</span></div>
+                    <div class="flex flex-col items-center gap-3"><img src="/static/img/tech/whatsapp.svg" alt="WhatsApp" class="h-12 w-auto"><span class="text-xs text-slate-400 font-semibold">WhatsApp API</span></div>
+                    <div class="flex flex-col items-center gap-3"><img src="/static/img/tech/meta.svg" alt="Meta" class="h-12 w-auto"><span class="text-xs text-slate-400 font-semibold">Meta Business</span></div>
+                    <div class="flex flex-col items-center gap-3"><img src="/static/img/tech/github.svg" alt="GitHub" class="h-12 w-auto filter invert"><span class="text-xs text-slate-400 font-semibold">GitHub</span></div>
+                    <div class="flex flex-col items-center gap-3"><img src="/static/img/tech/render.svg" alt="Render" class="h-12 w-auto filter invert"><span class="text-xs text-slate-400 font-semibold">Render</span></div>
+                </div>
+                <div class="flex items-center gap-16 px-8">
+                    <div class="flex flex-col items-center gap-3"><img src="/static/img/tech/python.svg" alt="Python" class="h-12 w-auto"><span class="text-xs text-slate-400 font-semibold">Python</span></div>
+                    <div class="flex flex-col items-center gap-3"><img src="/static/img/tech/fastapi.svg" alt="FastAPI" class="h-12 w-auto"><span class="text-xs text-slate-400 font-semibold">FastAPI</span></div>
+                    <div class="flex flex-col items-center gap-3"><img src="/static/img/tech/groq.svg" alt="Groq" class="h-12 w-auto"><span class="text-xs text-slate-400 font-semibold">Groq AI</span></div>
+                    <div class="flex flex-col items-center gap-3"><img src="/static/img/tech/duckdb.svg" alt="DuckDB" class="h-12 w-auto"><span class="text-xs text-slate-400 font-semibold">DuckDB</span></div>
+                    <div class="flex flex-col items-center gap-3"><img src="/static/img/tech/pandas.svg" alt="Pandas" class="h-12 w-auto"><span class="text-xs text-slate-400 font-semibold">Pandas</span></div>
+                    <div class="flex flex-col items-center gap-3"><img src="/static/img/tech/chromadb.svg" alt="ChromaDB" class="h-12 w-auto"><span class="text-xs text-slate-400 font-semibold">ChromaDB</span></div>
+                    <div class="flex flex-col items-center gap-3"><img src="/static/img/tech/tailwind.svg" alt="Tailwind" class="h-12 w-auto"><span class="text-xs text-slate-400 font-semibold">Tailwind</span></div>
+                    <div class="flex flex-col items-center gap-3"><img src="/static/img/tech/whatsapp.svg" alt="WhatsApp" class="h-12 w-auto"><span class="text-xs text-slate-400 font-semibold">WhatsApp API</span></div>
+                    <div class="flex flex-col items-center gap-3"><img src="/static/img/tech/meta.svg" alt="Meta" class="h-12 w-auto"><span class="text-xs text-slate-400 font-semibold">Meta Business</span></div>
+                    <div class="flex flex-col items-center gap-3"><img src="/static/img/tech/github.svg" alt="GitHub" class="h-12 w-auto filter invert"><span class="text-xs text-slate-400 font-semibold">GitHub</span></div>
+                    <div class="flex flex-col items-center gap-3"><img src="/static/img/tech/render.svg" alt="Render" class="h-12 w-auto filter invert"><span class="text-xs text-slate-400 font-semibold">Render</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculadora ROI -->
+    <section id="calculadora" class="py-16 px-4 max-w-4xl mx-auto text-center" data-aos="fade-up">
+        <div class="bg-gradient-to-b from-[#0D111A] to-[#05070B] border-2 border-cyan-500/50 p-8 rounded-3xl relative overflow-hidden shadow-[0_0_35px_rgba(6,182,212,0.15),inset_0_0_15px_rgba(6,182,212,0.03)]">
+            <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-90 shadow-[0_0_10px_rgba(34,211,238,1)]"></div>
+            <h3 class="text-2xl font-extrabold text-white mb-2">{{ t.calc_title }}</h3>
+            <p class="text-xs text-slate-300 mb-8">{{ t.calc_desc }}</p>
+            <div class="space-y-6 text-left max-w-md mx-auto">
+                <div>
+                    <label for="leadsInput" class="text-xs font-bold text-slate-200">{{ t.calc_leads }} <span id="leadsVal" class="text-cyan-400">200</span></label>
+                    <input type="range" id="leadsInput" min="20" max="1000" value="200" class="w-full accent-cyan-400 mt-2" aria-label="Leads por mes">
+                </div>
+                <div>
+                    <label for="ticketInput" class="text-xs font-bold text-slate-200">{{ t.calc_ticket }} <span id="ticketVal" class="text-cyan-400">$150.000</span></label>
+                    <input type="range" id="ticketInput" min="50000" max="2000000" step="50000" value="150000" class="w-full accent-cyan-400 mt-2" aria-label="Ticket promedio">
+                </div>
+            </div>
+            <div class="mt-8 bg-[#05070B] p-4 rounded-xl border border-cyan-500/30 max-w-md mx-auto">
+                <p class="text-xs text-slate-300">{{ t.calc_result_desc }}</p>
+                <p id="roiResult" class="text-3xl font-extrabold text-cyan-400 mt-1" aria-live="polite">$7.500.000 {{ t.calc_currency }}</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-20 px-4 max-w-4xl mx-auto" data-aos="fade-up">
+        <div class="text-center mb-12">
+            <h2 class="text-xs font-bold text-cyan-400 tracking-wider uppercase mb-2">{{ t.faq_subtitle }}</h2>
+            <h3 class="text-2xl md:text-4xl font-extrabold text-white">{{ t.faq_title }}</h3>
+        </div>
+        <div class="space-y-4">
+            <details class="bg-[#0D111A]/75 border border-slate-800 rounded-xl p-5">
+                <summary class="cursor-pointer text-sm font-bold text-white">{{ t.faq_q1 }}</summary>
+                <p class="text-xs text-slate-300 mt-3">{{ t.faq_a1 }}</p>
+            </details>
+            <details class="bg-[#0D111A]/75 border border-slate-800 rounded-xl p-5">
+                <summary class="cursor-pointer text-sm font-bold text-white">{{ t.faq_q2 }}</summary>
+                <p class="text-xs text-slate-300 mt-3">{{ t.faq_a2 }}</p>
+            </details>
+            <details class="bg-[#0D111A]/75 border border-slate-800 rounded-xl p-5">
+                <summary class="cursor-pointer text-sm font-bold text-white">{{ t.faq_q3 }}</summary>
+                <p class="text-xs text-slate-300 mt-3">{{ t.faq_a3 }}</p>
+            </details>
+            <details class="bg-[#0D111A]/75 border border-slate-800 rounded-xl p-5">
+                <summary class="cursor-pointer text-sm font-bold text-white">{{ t.faq_q4 }}</summary>
+                <p class="text-xs text-slate-300 mt-3">{{ t.faq_a4 }}</p>
+            </details>
+        </div>
+    </section>
+
+    <!-- Formulario -->
+    <section id="contacto" class="py-20 px-4 max-w-2xl mx-auto" data-aos="fade-up">
+        <div class="bg-gradient-to-b from-[#0D111A] to-[#05070B] border-2 border-cyan-500/50 p-8 md:p-10 rounded-3xl relative overflow-hidden shadow-[0_0_35px_rgba(6,182,212,0.15),inset_0_0_15px_rgba(6,182,212,0.03)]">
+            <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-90 shadow-[0_0_10px_rgba(34,211,238,1)]"></div>
+            <div class="text-center mb-8">
+                <h3 class="text-2xl font-extrabold text-white">{{ t.form_title }}</h3>
+                <p class="text-xs text-slate-300 mt-1">{{ t.form_desc }}</p>
+            </div>
+            <form id="leadForm" class="space-y-4" novalidate>
+                <div>
+                    <label for="nombre" class="block text-xs font-bold text-slate-200 mb-1">{{ t.form_name }}</label>
+                    <input type="text" id="nombre" name="nombre" required minlength="2" maxlength="120" autocomplete="name"
+                        class="w-full bg-slate-900 border border-slate-700 rounded-lg p-3 text-sm text-white focus:border-cyan-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400">
+                </div>
+                <div>
+                    <label for="empresa" class="block text-xs font-bold text-slate-200 mb-1">{{ t.form_company }}</label>
+                    <input type="text" id="empresa" name="empresa" maxlength="120" autocomplete="organization"
+                        class="w-full bg-slate-900 border border-slate-700 rounded-lg p-3 text-sm text-white focus:border-cyan-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400">
+                </div>
+                <div>
+                    <label for="whatsapp" class="block text-xs font-bold text-slate-200 mb-1">{{ t.form_wa }}</label>
+                    <input type="tel" id="whatsapp" name="whatsapp" required pattern="^\+?[0-9]{10,15}$" inputmode="tel" autocomplete="tel"
+                        placeholder="573001234567" maxlength="20"
+                        class="w-full bg-slate-900 border border-slate-700 rounded-lg p-3 text-sm text-white focus:border-cyan-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400">
+                </div>
+                <div>
+                    <label for="servicio" class="block text-xs font-bold text-slate-200 mb-1">{{ t.form_service }}</label>
+                    <select id="servicio" name="servicio"
+                        class="w-full bg-slate-900 border border-slate-700 rounded-lg p-3 text-sm text-white focus:border-cyan-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400">
+                        <option value="Bellai Flow">{{ t.form_opt_1 }}</option>
+                        <option value="Bellai Core">{{ t.form_opt_2 }}</option>
+                        <option value="Bellai Guard">{{ t.form_opt_3 }}</option>
+                    </select>
+                </div>
+                <div class="flex items-start gap-2">
+                    <input type="checkbox" id="consent" required class="mt-1 accent-cyan-400">
+                    <label for="consent" class="text-xs text-slate-300">
+                        {{ t.form_consent | safe }}
+                    </label>
+                </div>
+                <button type="submit" id="submitBtn"
+                    class="btn-shimmer w-full bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold p-3.5 rounded-xl text-sm transition focus-visible:ring-2 focus-visible:ring-cyan-300 disabled:opacity-60 disabled:cursor-not-allowed">
+                    {{ t.form_btn }}
+                </button>
+                <p id="formStatus" role="status" aria-live="polite" class="text-xs text-center min-h-[1rem]"></p>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 py-10 px-4 text-xs text-slate-400">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+            <div>
+                <p class="font-bold text-white mb-2">BELLAI</p>
+                <p>{{ t.footer_desc }}</p>
+            </div>
+            <div>
+                <p class="font-bold text-white mb-2">{{ t.footer_legal }}</p>
+                <a href="/privacidad" class="block hover:text-cyan-400">{{ t.footer_privacy }}</a>
+                <a href="/terminos" class="block hover:text-cyan-400">{{ t.footer_terms }}</a>
+            </div>
+            <div>
+                <p class="font-bold text-white mb-2">{{ t.footer_contact }}</p>
+                <a href="https://api.whatsapp.com/send?phone={{ whatsapp_phone }}" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400">WhatsApp</a>
+            </div>
+        </div>
+        <p class="text-center mt-8">{{ t.footer_rights }}</p>
+    </footer>
+
+    <!-- WIDGET FLOTANTE DE ASESOR VIRTUAL IA -->
+    <div id="ai-widget-root">
+        <div id="ai-chat-window">
+            <div class="chat-header">
+                <div class="chat-header-info">
+                    <span class="chat-status-dot"></span>
+                    <div>
+                        <p class="chat-title">Asesor IA — BellAI</p>
+                        <p class="chat-subtitle">Online 24/7</p>
+                    </div>
+                </div>
+                <button id="close-chat-btn" type="button" class="chat-close-btn">✕</button>
+            </div>
+            <div id="chat-messages">
+                <div class="msg-bot">👋 ¡Hola! Soy el asesor virtual inteligente de <strong>BELLAI</strong>. ¿En qué te ayudo hoy con tu automatización o negocio?</div>
+            </div>
+            <form id="chat-form">
+                <input type="text" id="chat-input" placeholder="Escribe tu mensaje..." autocomplete="off">
+                <button type="submit" id="chat-submit-btn">Enviar</button>
+            </form>
+        </div>
+        <button id="toggle-chat-btn" type="button">
+            <span class="pulse-dot"></span>
+            <span>Asesor IA</span>
+        </button>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/static/js/aos.js" defer></script>
+    <script src="/static/js/main.js" defer></script>
+</body>
+</html>
