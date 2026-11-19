@@ -1684,3 +1684,32 @@ body {
     background-color: rgba(6, 182, 212, 0.2);
     box-shadow: 0 0 0 2px #00e5ff;
 }
+/* 🚩 Banderas emoji en círculos (CSP compatible, sin inline) */
+.flag-btn {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 16px;
+    line-height: 1;
+    transition: all 0.3s ease;
+    opacity: 0.6;
+}
+
+.flag-btn:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.flag-btn.active {
+    opacity: 1;
+    background-color: rgba(6, 182, 212, 0.2);
+    box-shadow: 0 0 0 2px #00e5ff;
+}
+
+/* 🐕 Bulldog del Hero (antes estaba inline, ahora en clase) */
+.bulldog-img {
+    transform: scale(1.15);
+}
