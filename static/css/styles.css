@@ -1727,3 +1727,71 @@ body {
 .bulldog-img {
     transform: scale(1.15);
 }
+/* ============================================
+   🏆 SERVICE CARDS - ESTILO LINEAR/VERCEL
+   Iconos SVG + Números editoriales
+   ============================================ */
+
+.service-card {
+    background: linear-gradient(to bottom, #0D111A, #05070B);
+    border: 2px solid rgba(6, 182, 212, 0.5);
+    padding: 32px;
+    border-radius: 24px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    height: 100%;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #22d3ee, transparent);
+    opacity: 0.9;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    border-color: #00e5ff;
+    box-shadow: 0 20px 45px -12px rgba(6, 182, 212, 0.45), inset 0 0 20px rgba(6, 182, 212, 0.15);
+}
+
+.service-icon-wrapper {
+    position: relative;
+    width: 72px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(6, 182, 212, 0.08);
+    border: 1px solid rgba(0, 229, 255, 0.25);
+    border-radius: 16px;
+    margin-bottom: 20px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-card:hover .service-icon-wrapper {
+    background: rgba(6, 182, 212, 0.15);
+    border-color: #00e5ff;
+    transform: scale(1.05);
+}
+
+.service-number {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    font-size: 11px;
+    font-weight: 900;
+    color: #00e5ff;
+    background: #05070B;
+    border: 1px solid rgba(0, 229, 255, 0.4);
+    padding: 2px 6px;
+    border-radius: 6px;
+    letter-spacing: 0.5px;
+    font-family: 'Inter', monospace;
+    z-index: 2;
+}
