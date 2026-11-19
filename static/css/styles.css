@@ -1684,29 +1684,43 @@ body {
     background-color: rgba(6, 182, 212, 0.2);
     box-shadow: 0 0 0 2px #00e5ff;
 }
-/* 🚩 Banderas emoji en círculos (CSP compatible, sin inline) */
+/* 🌐 Selector de idioma ES/EN - blindado contra Tailwind */
 .flag-btn {
-    width: 28px;
-    height: 28px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    font-size: 16px;
-    line-height: 1;
-    transition: all 0.3s ease;
-    opacity: 0.6;
+    width: 32px !important;
+    height: 32px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 50% !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+    letter-spacing: 0.5px !important;
+    text-transform: uppercase !important;
+    transition: all 0.3s ease !important;
+    opacity: 0.55 !important;
+    flex-shrink: 0 !important;
+    border: 1px solid rgba(148, 163, 184, 0.3) !important;
+    background: transparent !important;
+    color: #cbd5e1 !important;
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
 .flag-btn:hover {
-    opacity: 1;
-    transform: scale(1.1);
+    opacity: 1 !important;
+    border-color: #00e5ff !important;
+    color: #00e5ff !important;
+    transform: scale(1.1) !important;
 }
 
 .flag-btn.active {
-    opacity: 1;
-    background-color: rgba(6, 182, 212, 0.2);
-    box-shadow: 0 0 0 2px #00e5ff;
+    opacity: 1 !important;
+    background: rgba(6, 182, 212, 0.15) !important;
+    border-color: #00e5ff !important;
+    box-shadow: 0 0 12px rgba(0, 229, 255, 0.4) !important;
+    color: #00e5ff !important;
 }
 
 /* 🐕 Bulldog del Hero (antes estaba inline, ahora en clase) */
