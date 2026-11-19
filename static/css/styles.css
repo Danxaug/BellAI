@@ -1698,3 +1698,31 @@ body {
         font-size: 14px !important;
     }
 }
+/* 🚩 Banderas SVG desde CDN - Tamaño controlado y perfecto */
+.flag-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+    border-radius: 4px;
+    border: 1px solid rgba(148, 163, 184, 0.3);
+    transition: all 0.3s ease;
+}
+
+.flag-link:hover {
+    border-color: #00e5ff;
+    transform: scale(1.1);
+}
+
+.flag-link.active {
+    border-color: #00e5ff;
+    box-shadow: 0 0 10px rgba(0, 229, 255, 0.4);
+}
+
+.flag-svg {
+    width: 24px !important;
+    height: 16px !important;
+    object-fit: cover !important;
+    display: block !important;
+    border-radius: 2px;
+}
