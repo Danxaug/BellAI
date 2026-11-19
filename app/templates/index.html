@@ -101,14 +101,17 @@
     </div>
 
     <!-- Nav CORREGIDO: Banderas siempre visibles -->
-    <div class="flex items-center gap-2">
-    <a href="/" title="Español" 
-       class="flag-link {% if lang == 'es' %}active{% endif %}">
-        <img src="https://flagcdn.com/w40/es.svg" alt="Español" class="flag-svg">
+    <div class="flex items-center gap-1 text-sm font-semibold">
+    <a href="/" 
+       class="px-2 py-1 rounded transition-all duration-300 
+       {% if lang == 'es' %}text-cyan-400 bg-cyan-500/10 {% else %}text-slate-400 hover:text-cyan-400 {% endif %}">
+        ES
     </a>
-    <a href="/en" title="English" 
-       class="flag-link {% if lang == 'en' %}active{% endif %}">
-        <img src="https://flagcdn.com/w40/us.svg" alt="English" class="flag-svg">
+    <span class="text-slate-600">|</span>
+    <a href="/en" 
+       class="px-2 py-1 rounded transition-all duration-300 
+       {% if lang == 'en' %}text-cyan-400 bg-cyan-500/10 {% else %}text-slate-400 hover:text-cyan-400 {% endif %}">
+        EN
     </a>
 </div>
             
