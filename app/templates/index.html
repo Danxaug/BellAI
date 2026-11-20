@@ -28,7 +28,7 @@
     <link rel="manifest" href="/static/manifest.json">
 
     <!-- CSS local (build de Tailwind, sin CDN) -->
-    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="/static/css/styles.css?v=3">
     <link rel="stylesheet" href="/static/css/aos.css">
 
     <!-- Schema.org JSON-LD -->
@@ -50,12 +50,35 @@
 </head>
 <body class="bg-[#05070B] text-slate-100 font-sans overflow-x-hidden">
 
-    <!-- Announcement: ESTRELLA SVG PEQUEÑA + TEXTO -->
-    <div class="bg-gradient-to-r from-blue-900 via-[#05070B] to-cyan-900 text-center py-2 px-4 text-xs font-semibold text-cyan-300 border-b border-cyan-500/20">
-        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="banner-star">
-            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"></path>
-        </svg>
-        <span class="inline-block align-middle">{{ t.banner_text }}</span>
+    <!-- Announcement: CARRUSEL INFINITO CON BRILLO -->
+    <div class="banner-marquee">
+        <div class="banner-track">
+            <span class="banner-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"></path>
+                </svg>
+                {{ t.banner_text }}
+            </span>
+            <span class="banner-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"></path>
+                </svg>
+                {{ t.banner_text }}
+            </span>
+            <span class="banner-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"></path>
+                </svg>
+                {{ t.banner_text }}
+            </span>
+            <span class="banner-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"></path>
+                </svg>
+                {{ t.banner_text }}
+            </span>
+        </div>
+        <div class="banner-shimmer"></div>
     </div>
 
     <!-- Nav -->
@@ -78,7 +101,7 @@
                 <a href="#faq" class="hover:text-cyan-400 transition-colors duration-300">{{ t.nav_faq }}</a>
             </div>
             
-            <!-- DERECHA: Banderas + Botón -->
+            <!-- DERECHA: Banderas + Botón Agendar con brillo -->
             <div class="flex items-center gap-3 shrink-0">
                 <!-- BANDERAS ES/EN -->
                 <div class="flex items-center gap-2 shrink-0">
@@ -86,10 +109,10 @@
                     <a href="/en" title="English" class="flag-btn {% if lang == 'en' %}active{% endif %}">EN</a>
                 </div>
                 
-                <!-- BOTÓN -->
+                <!-- BOTÓN AGENDAR CON BRILLO -->
                 <a href="https://api.whatsapp.com/send?phone={{ whatsapp_phone }}&text=Hola%20Bellai,%20quiero%20agendar%20mi%20diagn%C3%B3stico%20gratuito"
                    target="_blank" rel="noopener noreferrer"
-                   class="btn-shimmer bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs px-3 py-2 md:px-5 md:py-2.5 md:text-sm rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(6,182,212,0.4)] focus-visible:ring-2 focus-visible:ring-cyan-300 whitespace-nowrap">
+                   class="btn-agendar-shimmer">
                     <span class="md:hidden">Agendar</span>
                     <span class="hidden md:inline">{{ t.nav_cta }}</span>
                 </a>
@@ -101,8 +124,8 @@
     <section class="relative pt-12 pb-20 px-4 max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
         <div data-aos="fade-right">
             <!-- BADGE: CHIP SVG + TEXTO EN LA MISMA LÍNEA -->
-            <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-cyan-950/60 border border-cyan-500/40 rounded-full text-cyan-400 text-xs font-semibold mb-4 whitespace-nowrap">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0">
+            <div class="badge-hero">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
                     <rect x="9" y="9" width="6" height="6"></rect>
                     <line x1="9" y1="1" x2="9" y2="4"></line>
@@ -114,7 +137,7 @@
                     <line x1="1" y1="9" x2="4" y2="9"></line>
                     <line x1="1" y1="14" x2="4" y2="14"></line>
                 </svg>
-                <span class="shrink-0">{{ t.hero_badge }}</span>
+                <span>{{ t.hero_badge }}</span>
             </div>
             <h1 class="text-3xl md:text-5xl font-extrabold leading-tight text-white mb-6">
                 {{ t.hero_title_1 }} <span class="text-cyan-400">{{ t.hero_title_2 }}</span>
@@ -142,7 +165,7 @@
                 <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-90 shadow-[0_0_10px_rgba(34,211,238,1)]"></div>
                 <div class="w-full h-[300px] rounded-2xl overflow-hidden bg-[#05070B] mb-5 border-2 border-cyan-400/80 flex justify-center items-center relative shadow-[0_0_25px_rgba(6,182,212,0.5),inset_0_0_20px_rgba(0,0,0,0.8)]">
                     <div class="absolute inset-0 bg-gradient-to-t from-cyan-900/20 to-transparent pointer-events-none z-10"></div>
-                    <!-- IMAGEN BULLDOG: clase bulldog-img (object-position en CSS) -->
+                    <!-- IMAGEN BULLDOG: clase bulldog-img -->
                     <img src="/static/img/bellailogo.webp" alt="Mascota Bellai Cyber-Bulldog" class="w-full h-full object-cover relative z-0 bulldog-img" loading="lazy" decoding="async">
                 </div>
                 <div class="bg-[#05070B]/90 p-4 rounded-xl border border-cyan-500/40 flex items-center justify-between shadow-[inset_0_0_15px_rgba(6,182,212,0.1)]">
@@ -290,7 +313,7 @@
             
             <div class="text-center mt-12" data-aos="fade-up">
                 <p class="text-sm text-slate-300 mb-6">Si te identificaste con al menos uno, <span class="text-cyan-400 font-bold">sigue leyendo</span>. La solución está abajo</p>
-                <!-- BOTÓN VER LA SOLUCIÓN: clase btn-solucion -->
+                <!-- BOTÓN VER LA SOLUCIÓN -->
                 <a href="#servicios" class="btn-solucion bg-cyan-500 text-slate-950 font-bold px-8 py-3 rounded-xl text-sm hover:bg-cyan-400 transition-all duration-300 hover:scale-105">
                     <span>Ver la solución</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -424,7 +447,7 @@
         </div>
     </section>
 
-    <!-- Calculadora ROI (CON NOTA DE TRANSPARENCIA) -->
+    <!-- Calculadora ROI -->
     <section id="calculadora" class="py-16 px-4 max-w-4xl mx-auto text-center" data-aos="fade-up">
         <div class="bg-gradient-to-b from-[#0D111A] to-[#05070B] border-2 border-cyan-500/50 p-8 rounded-3xl relative overflow-hidden shadow-[0_0_35px_rgba(6,182,212,0.15),inset_0_0_15px_rgba(6,182,212,0.03)]">
             <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-90 shadow-[0_0_10px_rgba(34,211,238,1)]"></div>
@@ -448,7 +471,7 @@
         </div>
     </section>
 
-    <!-- FAQ (ACTUALIZADAS) -->
+    <!-- FAQ -->
     <section id="faq" class="py-20 px-4 max-w-4xl mx-auto" data-aos="fade-up">
         <div class="text-center mb-12">
             <h2 class="text-xs font-bold text-cyan-400 tracking-wider uppercase mb-2">{{ t.faq_subtitle }}</h2>
@@ -474,7 +497,7 @@
         </div>
     </section>
 
-    <!-- Formulario (CON "LO QUE RECIBIRÁ") -->
+    <!-- Formulario -->
     <section id="contacto" class="py-20 px-4 max-w-2xl mx-auto" data-aos="fade-up">
         <div class="bg-gradient-to-b from-[#0D111A] to-[#05070B] border-2 border-cyan-500/50 p-8 md:p-10 rounded-3xl relative overflow-hidden shadow-[0_0_35px_rgba(6,182,212,0.15),inset_0_0_15px_rgba(6,182,212,0.03)]">
             <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-90 shadow-[0_0_10px_rgba(34,211,238,1)]"></div>
@@ -546,7 +569,7 @@
                         {{ t.form_consent | safe }}
                     </label>
                 </div>
-                <!-- BOTÓN FORMULARIO: clase btn-formulario -->
+                <!-- BOTÓN FORMULARIO -->
                 <button type="submit" id="submitBtn"
                     class="btn-formulario w-full bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold p-3.5 rounded-xl text-sm transition focus-visible:ring-2 focus-visible:ring-cyan-300 disabled:opacity-60 disabled:cursor-not-allowed">
                     <span>{{ t.form_btn }}</span>
