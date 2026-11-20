@@ -2059,3 +2059,162 @@ body {
         padding: 10px 20px;
     }
 }
+/* ============================================
+   🧠 FONDO DE RED NEURONAL ANIMADA (HERO)
+   ============================================ */
+
+.hero-neural-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+/* Capa 1: Glow ambiental */
+.neural-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(ellipse 600px 400px at 20% 30%, rgba(6, 182, 212, 0.12) 0%, transparent 70%),
+        radial-gradient(ellipse 500px 350px at 80% 70%, rgba(34, 211, 238, 0.08) 0%, transparent 70%),
+        radial-gradient(ellipse 400px 300px at 50% 50%, rgba(14, 165, 233, 0.06) 0%, transparent 70%);
+    animation: glow-pulse 8s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 1; }
+}
+
+/* Capa 2: Partículas flotantes */
+.neural-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.particle {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: #22d3ee;
+    border-radius: 50%;
+    box-shadow: 0 0 6px rgba(34, 211, 238, 0.8);
+    opacity: 0;
+}
+
+.p1 { top: 10%; left: 15%; animation: float 12s ease-in-out infinite 0s; }
+.p2 { top: 25%; left: 70%; animation: float 14s ease-in-out infinite 2s; }
+.p3 { top: 60%; left: 20%; animation: float 11s ease-in-out infinite 4s; }
+.p4 { top: 80%; left: 85%; animation: float 13s ease-in-out infinite 1s; }
+.p5 { top: 40%; left: 50%; animation: float 15s ease-in-out infinite 3s; }
+.p6 { top: 15%; left: 90%; animation: float 12s ease-in-out infinite 5s; }
+.p7 { top: 70%; left: 10%; animation: float 14s ease-in-out infinite 6s; }
+.p8 { top: 50%; left: 80%; animation: float 11s ease-in-out infinite 7s; }
+.p9 { top: 90%; left: 40%; animation: float 13s ease-in-out infinite 8s; }
+.p10 { top: 30%; left: 30%; animation: float 15s ease-in-out infinite 9s; }
+.p11 { top: 65%; left: 65%; animation: float 12s ease-in-out infinite 10s; }
+.p12 { top: 5%; left: 50%; animation: float 14s ease-in-out infinite 11s; }
+
+@keyframes float {
+    0% { transform: translate(0, 0); opacity: 0; }
+    10% { opacity: 0.8; }
+    50% { transform: translate(30px, -40px); opacity: 1; }
+    90% { opacity: 0.8; }
+    100% { transform: translate(60px, 20px); opacity: 0; }
+}
+
+/* Capa 3: SVG de red neuronal */
+.neural-network-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+}
+
+.neural-lines line {
+    stroke: #06b6d4;
+    stroke-width: 0.5;
+    fill: none;
+    stroke-dasharray: 500;
+    stroke-dashoffset: 500;
+    animation: draw-line 4s ease-in-out infinite;
+}
+
+.neural-lines line:nth-child(1) { animation-delay: 0s; }
+.neural-lines line:nth-child(2) { animation-delay: 0.3s; }
+.neural-lines line:nth-child(3) { animation-delay: 0.6s; }
+.neural-lines line:nth-child(4) { animation-delay: 0.9s; }
+.neural-lines line:nth-child(5) { animation-delay: 1.2s; }
+.neural-lines line:nth-child(6) { animation-delay: 1.5s; }
+.neural-lines line:nth-child(7) { animation-delay: 1.8s; }
+.neural-lines line:nth-child(8) { animation-delay: 2.1s; }
+.neural-lines line:nth-child(9) { animation-delay: 2.4s; }
+.neural-lines line:nth-child(10) { animation-delay: 2.7s; }
+.neural-lines line:nth-child(11) { animation-delay: 3s; }
+.neural-lines line:nth-child(12) { animation-delay: 3.3s; }
+.neural-lines line:nth-child(13) { animation-delay: 3.6s; }
+.neural-lines line:nth-child(14) { animation-delay: 3.9s; }
+.neural-lines line:nth-child(15) { animation-delay: 4.2s; }
+.neural-lines line:nth-child(16) { animation-delay: 4.5s; }
+.neural-lines line:nth-child(17) { animation-delay: 4.8s; }
+.neural-lines line:nth-child(18) { animation-delay: 5.1s; }
+
+@keyframes draw-line {
+    0% { stroke-dashoffset: 500; opacity: 0; }
+    20% { opacity: 0.6; }
+    50% { stroke-dashoffset: 0; opacity: 0.6; }
+    80% { opacity: 0; }
+    100% { stroke-dashoffset: -500; opacity: 0; }
+}
+
+.neural-nodes circle {
+    fill: #22d3ee;
+    opacity: 0;
+    animation: node-pulse 4s ease-in-out infinite;
+}
+
+.neural-nodes circle:nth-child(1) { animation-delay: 0s; }
+.neural-nodes circle:nth-child(2) { animation-delay: 0.4s; }
+.neural-nodes circle:nth-child(3) { animation-delay: 0.8s; }
+.neural-nodes circle:nth-child(4) { animation-delay: 1.2s; }
+.neural-nodes circle:nth-child(5) { animation-delay: 1.6s; }
+.neural-nodes circle:nth-child(6) { animation-delay: 2s; }
+.neural-nodes circle:nth-child(7) { animation-delay: 2.4s; }
+.neural-nodes circle:nth-child(8) { animation-delay: 2.8s; }
+.neural-nodes circle:nth-child(9) { animation-delay: 3.2s; }
+.neural-nodes circle:nth-child(10) { animation-delay: 3.6s; }
+.neural-nodes circle:nth-child(11) { animation-delay: 4s; }
+
+@keyframes node-pulse {
+    0%, 100% { opacity: 0; r: 3; }
+    50% { opacity: 0.9; r: 6; }
+}
+
+/* Asegurar que el contenido del hero quede por encima */
+.hero-content {
+    position: relative;
+    z-index: 10;
+}
+
+/* Optimización móvil: reducir partículas */
+@media (max-width: 768px) {
+    .neural-network-svg {
+        opacity: 0.2;
+    }
+    .particle {
+        width: 2px;
+        height: 2px;
+    }
+}
