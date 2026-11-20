@@ -181,6 +181,16 @@
         </div>
     </section>
 
+    <!-- Stats -->
+    <section class="border-y border-slate-800 bg-[#0D111A]/50 py-10 px-4" data-aos="fade-up">
+        <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div><p class="text-2xl md:text-3xl font-extrabold text-cyan-400">{{ t.stat_1_title }}</p><p class="text-xs text-slate-300 mt-1">{{ t.stat_1_desc }}</p></div>
+            <div><p class="text-2xl md:text-3xl font-extrabold text-white">{{ t.stat_2_title }}</p><p class="text-xs text-slate-300 mt-1">{{ t.stat_2_desc }}</p></div>
+            <div><p class="text-2xl md:text-3xl font-extrabold text-cyan-400">{{ t.stat_3_title }}</p><p class="text-xs text-slate-300 mt-1">{{ t.stat_3_desc }}</p></div>
+            <div><p class="text-2xl md:text-3xl font-extrabold text-white">{{ t.stat_4_title }}</p><p class="text-xs text-slate-300 mt-1">{{ t.stat_4_desc }}</p></div>
+        </div>
+    </section>
+
     <!-- SECCIÓN: EL DOLOR -->
     <section class="py-20 px-4 bg-[#05070B]">
         <div class="max-w-4xl mx-auto">
@@ -231,16 +241,6 @@
                     Ver la solución →
                 </a>
             </div>
-        </div>
-    </section>
-
-    <!-- Stats -->
-    <section class="border-y border-slate-800 bg-[#0D111A]/50 py-10 px-4" data-aos="fade-up">
-        <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            <div><p class="text-2xl md:text-3xl font-extrabold text-cyan-400">{{ t.stat_1_title }}</p><p class="text-xs text-slate-300 mt-1">{{ t.stat_1_desc }}</p></div>
-            <div><p class="text-2xl md:text-3xl font-extrabold text-white">{{ t.stat_2_title }}</p><p class="text-xs text-slate-300 mt-1">{{ t.stat_2_desc }}</p></div>
-            <div><p class="text-2xl md:text-3xl font-extrabold text-cyan-400">{{ t.stat_3_title }}</p><p class="text-xs text-slate-300 mt-1">{{ t.stat_3_desc }}</p></div>
-            <div><p class="text-2xl md:text-3xl font-extrabold text-white">{{ t.stat_4_title }}</p><p class="text-xs text-slate-300 mt-1">{{ t.stat_4_desc }}</p></div>
         </div>
     </section>
 
@@ -299,7 +299,7 @@
             </div>
             <div class="grid md:grid-cols-3 gap-8">
                 
-                <!-- Servicio 1: Vitrina Digital -->
+                <!-- Servicio 1: Bellai Web & Captación -->
                 <div class="service-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="service-icon-wrapper">
                         <span class="service-number">01</span>
@@ -309,17 +309,20 @@
                             <line x1="12" y1="17" x2="12" y2="21"></line>
                         </svg>
                     </div>
-                    <h4 class="text-xl font-bold text-white mb-2">{{ t.service_1_title }}</h4>
-                    <p class="text-xs text-cyan-400 font-bold mb-4">{{ t.service_1_sub }}</p>
-                    <ul class="text-xs text-slate-300 space-y-2.5">
-                        <li>✓ {{ t.service_1_item_1 }}</li>
-                        <li>✓ {{ t.service_1_item_2 }}</li>
-                        <li>✓ {{ t.service_1_item_3 }}</li>
-                        <li>✓ {{ t.service_1_item_4 }}</li>
+                    <h4 class="text-xl font-bold text-white mb-2">Bellai Web & Captación</h4>
+                    <p class="text-xs text-cyan-400 font-bold mb-3">Fundación Digital de Alta Conversión</p>
+                    <p class="text-xs text-slate-400 mb-4 italic">Ideal para: Empresas, clínicas, constructoras y firmas que necesitan proyectar autoridad inmediata.</p>
+                    <ul class="text-xs text-slate-300 space-y-2">
+                        <li>✓ Desarrollo web Mobile-First ultrarrápido (&lt; 2s)</li>
+                        <li>✓ Arquitectura bilingüe (ES/EN) lista para clientes internacionales</li>
+                        <li>✓ Calculadoras interactivas y enrutamiento directo a WhatsApp</li>
                     </ul>
+                    <div class="mt-4 pt-4 border-t border-slate-700">
+                        <p class="text-xs text-cyan-400 font-semibold">Resultado: Una carta de presentación que filtra curiosos y atrae compradores reales.</p>
+                    </div>
                 </div>
 
-                <!-- Servicio 2: Piloto Automático -->
+                <!-- Servicio 2: Bellai Flow -->
                 <div class="service-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="service-icon-wrapper">
                         <span class="service-number">02</span>
@@ -328,17 +331,20 @@
                             <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
                         </svg>
                     </div>
-                    <h4 class="text-xl font-bold text-white mb-2">{{ t.service_2_title }}</h4>
-                    <p class="text-xs text-blue-400 font-bold mb-4">{{ t.service_2_sub }}</p>
-                    <ul class="text-xs text-slate-300 space-y-2.5">
-                        <li>✓ {{ t.service_2_item_1 }}</li>
-                        <li>✓ {{ t.service_2_item_2 }}</li>
-                        <li>✓ {{ t.service_2_item_3 }}</li>
-                        <li>✓ {{ t.service_2_item_4 }}</li>
+                    <h4 class="text-xl font-bold text-white mb-2">Bellai Flow</h4>
+                    <p class="text-xs text-blue-400 font-bold mb-3">Embudos Comerciales y Operación Autónoma 24/7</p>
+                    <p class="text-xs text-slate-400 mb-4 italic">Ideal para: Negocios con alto flujo de mensajes que necesitan calificar leads sin saturar a su equipo.</p>
+                    <ul class="text-xs text-slate-300 space-y-2">
+                        <li>✓ Agentes comerciales inteligentes en WhatsApp y Web 24/7</li>
+                        <li>✓ Calificación automática de presupuesto y agendamiento</li>
+                        <li>✓ Recuperación de cotizaciones abandonadas y conexión con CRM</li>
                     </ul>
+                    <div class="mt-4 pt-4 border-t border-slate-700">
+                        <p class="text-xs text-blue-400 font-semibold">Resultado: Su fuerza de ventas recibe únicamente prospectos calificados y listos para cerrar.</p>
+                    </div>
                 </div>
 
-                <!-- Servicio 3: Cerebro Empresarial -->
+                <!-- Servicio 3: Bellai Core & Guard -->
                 <div class="service-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="service-icon-wrapper">
                         <span class="service-number">03</span>
@@ -347,14 +353,17 @@
                             <path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z"></path>
                         </svg>
                     </div>
-                    <h4 class="text-xl font-bold text-white mb-2">{{ t.service_3_title }}</h4>
-                    <p class="text-xs text-purple-400 font-bold mb-4">{{ t.service_3_sub }}</p>
-                    <ul class="text-xs text-slate-300 space-y-2.5">
-                        <li>✓ {{ t.service_3_item_1 }}</li>
-                        <li>✓ {{ t.service_3_item_2 }}</li>
-                        <li>✓ {{ t.service_3_item_3 }}</li>
-                        <li>✓ {{ t.service_3_item_4 }}</li>
+                    <h4 class="text-xl font-bold text-white mb-2">Bellai Core & Guard</h4>
+                    <p class="text-xs text-purple-400 font-bold mb-3">Inteligencia Documental y Analítica de Precisión Quirúrgica</p>
+                    <p class="text-xs text-slate-400 mb-4 italic">Ideal para: Firmas jurídicas, clínicas, aseguradoras y empresas con alto volumen de documentos críticos.</p>
+                    <ul class="text-xs text-slate-300 space-y-2">
+                        <li>✓ Sistemas RAG: IA conectada a sus PDFs y bases de datos con cero alucinaciones</li>
+                        <li>✓ Motores Neuro-Simbólicos: Cálculos financieros y estadísticos exactos</li>
+                        <li>✓ Auditorías de horas resueltas en segundos con respaldo verificable</li>
                     </ul>
+                    <div class="mt-4 pt-4 border-t border-slate-700">
+                        <p class="text-xs text-purple-400 font-semibold">Resultado: Decisiones gerenciales respaldadas por matemáticas exactas y cumplimiento normativo blindado.</p>
+                    </div>
                 </div>
 
             </div>
@@ -422,6 +431,7 @@
             <div class="mt-8 bg-[#05070B] p-4 rounded-xl border border-cyan-500/30 max-w-md mx-auto">
                 <p class="text-xs text-slate-300">{{ t.calc_result_desc }}</p>
                 <p id="roiResult" class="text-3xl font-extrabold text-cyan-400 mt-1" aria-live="polite">$7.500.000 {{ t.calc_currency }}</p>
+                <p class="text-[10px] text-slate-500 mt-3 italic">* Estimación comercial proyectada con base en tasas promedio de recuperación por respuesta inmediata. Validaremos las métricas reales de su operación durante el diagnóstico gratuito.</p>
             </div>
         </div>
     </section>
@@ -434,20 +444,20 @@
         </div>
         <div class="space-y-4">
             <details class="bg-[#0D111A]/75 border border-slate-800 rounded-xl p-5">
-                <summary class="cursor-pointer text-sm font-bold text-white">{{ t.faq_q1 }}</summary>
-                <p class="text-xs text-slate-300 mt-3">{{ t.faq_a1 }}</p>
+                <summary class="cursor-pointer text-sm font-bold text-white">¿Cómo garantizan que la Inteligencia Artificial no invente datos (Cero Alucinaciones)?</summary>
+                <p class="text-xs text-slate-300 mt-3">Implementamos arquitectura RAG (Generación Aumentada por Recuperación) combinada con motores analíticos exactos. A diferencia de un chat público convencional, nuestros sistemas tienen prohibido responder fuera de sus fuentes autorizadas: consultan sus PDFs, bases de datos o normativas y entregan la respuesta citando el documento exacto de origen.</p>
             </details>
             <details class="bg-[#0D111A]/75 border border-slate-800 rounded-xl p-5">
-                <summary class="cursor-pointer text-sm font-bold text-white">{{ t.faq_q2 }}</summary>
-                <p class="text-xs text-slate-300 mt-3">{{ t.faq_a2 }}</p>
+                <summary class="cursor-pointer text-sm font-bold text-white">¿Nuestros documentos y bases de datos corporativas están seguros?</summary>
+                <p class="text-xs text-slate-300 mt-3">Absolutamente. Trabajamos bajo estrictos protocolos de privacidad, aislamiento de datos y cumplimiento de la Ley 1581 de 2012 en Colombia. Su información nunca se utiliza para entrenar modelos públicos; permanece en entornos privados bajo su control.</p>
             </details>
             <details class="bg-[#0D111A]/75 border border-slate-800 rounded-xl p-5">
-                <summary class="cursor-pointer text-sm font-bold text-white">{{ t.faq_q3 }}</summary>
-                <p class="text-xs text-slate-300 mt-3">{{ t.faq_a3 }}</p>
+                <summary class="cursor-pointer text-sm font-bold text-white">¿Cuánto tiempo toma ver resultados e implementar una solución?</summary>
+                <p class="text-xs text-slate-300 mt-3">Gracias a nuestra arquitectura modular, una plataforma web de alta conversión o un embudo comercial automatizado se despliega entre 2 y 3 semanas. Los sistemas RAG y motores analíticos a medida se estructuran por fases rápidas con entregables funcionales desde las primeras semanas.</p>
             </details>
             <details class="bg-[#0D111A]/75 border border-slate-800 rounded-xl p-5">
-                <summary class="cursor-pointer text-sm font-bold text-white">{{ t.faq_q4 }}</summary>
-                <p class="text-xs text-slate-300 mt-3">{{ t.faq_a4 }}</p>
+                <summary class="cursor-pointer text-sm font-bold text-white">¿Qué incluye exactamente el Diagnóstico Gratuito?</summary>
+                <p class="text-xs text-slate-300 mt-3">Es una sesión ejecutiva de 20 minutos donde auditamos su presencia web actual, identificamos dónde se están fugando sus prospectos o dónde hay cuellos de botella documentales, y le entregamos una hoja de ruta clara con la arquitectura recomendada (sin compromiso de compra).</p>
             </details>
         </div>
     </section>
@@ -460,6 +470,38 @@
                 <h3 class="text-2xl font-extrabold text-white">{{ t.form_title }}</h3>
                 <p class="text-xs text-slate-300 mt-1">{{ t.form_desc }}</p>
             </div>
+            
+            <!-- LO QUE RECIBIRÁ (NUEVO) -->
+            <div class="mb-8 p-6 bg-[#05070B]/50 border border-cyan-500/20 rounded-xl" data-aos="fade-up">
+                <h4 class="text-sm font-bold text-cyan-400 mb-4 flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00e5ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
+                    Lo que recibirá tras agendar:
+                </h4>
+                <ul class="space-y-3">
+                    <li class="flex items-start gap-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00e5ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 flex-shrink-0">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <span class="text-xs text-slate-300">Auditoría rápida de velocidad y conversión de su canal actual</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00e5ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 flex-shrink-0">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <span class="text-xs text-slate-300">Identificación de oportunidades de automatización o búsqueda documental (RAG)</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00e5ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 flex-shrink-0">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <span class="text-xs text-slate-300">Propuesta técnica y comercial clara, sin letra pequeña</span>
+                    </li>
+                </ul>
+            </div>
+            
             <form id="leadForm" class="space-y-4" novalidate>
                 <div>
                     <label for="nombre" class="block text-xs font-bold text-slate-200 mb-1">{{ t.form_name }}</label>
