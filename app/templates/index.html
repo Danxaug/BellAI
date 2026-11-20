@@ -175,7 +175,7 @@
                             {{ t.active_agent }}
                         </p>
                     </div>
-                    <span class="text-[10px] font-semibold bg-cyan-950 text-cyan-300 px-3 py-1.5 rounded-md border border-cyan-500/30 shadow-[0_0_10px_rgba(6,182,212,0.2)]">DuckDB + Groq</span>
+                    <span class="text-[10px] font-semibold bg-cyan-950 text-cyan-300 px-3 py-1.5 rounded-md border border-cyan-500/30 shadow-[0_0_10px_rgba(6,182,212,0.2)]">Python + Groq</span>
                 </div>
             </div>
         </div>
@@ -192,57 +192,86 @@
     </section>
 
     <!-- SECCIÓN: EL DOLOR -->
-    <section class="py-20 px-4 bg-[#05070B]">
-        <div class="max-w-4xl mx-auto">
-            <div class="text-center mb-12" data-aos="fade-up">
-                <h2 class="text-xs font-bold text-cyan-400 tracking-wider uppercase mb-3">¿Te suena familiar?</h2>
-                <h3 class="text-2xl md:text-4xl font-extrabold text-white">
-                    Tu negocio está <span class="text-cyan-400">perdiendo dinero</span> cada día
-                </h3>
-            </div>
-            
-            <div class="grid md:grid-cols-2 gap-6">
-                <div class="pain-item" data-aos="fade-right" data-aos-delay="100">
-                    <div class="pain-icon">⏰</div>
-                    <div>
-                        <h4 class="text-base font-bold text-white mb-1">Leads que se enfrían</h4>
-                        <p class="text-xs text-slate-400">El 78% de los clientes compra al primero que responde. Si tardas más de 5 minutos, ya perdiste la venta.</p>
-                    </div>
+<section class="py-20 px-4 bg-[#05070B]">
+    <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12" data-aos="fade-up">
+            <h2 class="text-xs font-bold text-cyan-400 tracking-wider uppercase mb-3">¿Te suena familiar?</h2>
+            <h3 class="text-2xl md:text-4xl font-extrabold text-white">
+                Tu negocio está <span class="text-cyan-400">perdiendo dinero</span> cada día
+            </h3>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-6">
+            <!-- Dolor 1: Leads que se enfrían (Bellai Flow) -->
+            <div class="pain-item" data-aos="fade-right" data-aos-delay="100">
+                <div class="pain-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00e5ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
                 </div>
-                
-                <div class="pain-item" data-aos="fade-left" data-aos-delay="200">
-                    <div class="pain-icon">🐢</div>
-                    <div>
-                        <h4 class="text-base font-bold text-white mb-1">Web lenta que espanta</h4>
-                        <p class="text-xs text-slate-400">53% de los visitantes abandona si tu web tarda más de 3 segundos en cargar. Cada segundo = dinero perdido.</p>
-                    </div>
-                </div>
-                
-                <div class="pain-item" data-aos="fade-right" data-aos-delay="300">
-                    <div class="pain-icon">💸</div>
-                    <div>
-                        <h4 class="text-base font-bold text-white mb-1">Empleados en tareas repetitivas</h4>
-                        <p class="text-xs text-slate-400">Responder "¿cuánto cuesta?" 50 veces al día no es vender. Es desperdiciar talento humano en trabajo de bot.</p>
-                    </div>
-                </div>
-                
-                <div class="pain-item" data-aos="fade-left" data-aos-delay="400">
-                    <div class="pain-icon">🕳️</div>
-                    <div>
-                        <h4 class="text-base font-bold text-white mb-1">Agujeros negros en tu embudo</h4>
-                        <p class="text-xs text-slate-400">No sabes cuántos leads estás perdiendo porque no hay trazabilidad. Lo que no se mide, no se puede mejorar.</p>
-                    </div>
+                <div>
+                    <h4 class="text-base font-bold text-white mb-1">Leads que se enfrían</h4>
+                    <p class="text-xs text-slate-400">El 78% de los clientes compra al primero que responde. Si tardas más de 5 minutos, ya perdiste la venta.</p>
                 </div>
             </div>
             
-            <div class="text-center mt-12" data-aos="fade-up">
-                <p class="text-sm text-slate-300 mb-6">Si te identificaste con al menos uno, <span class="text-cyan-400 font-bold">sigue leyendo</span>. La solución está abajo 👇</p>
-                <a href="#servicios" class="btn-shimmer inline-block bg-cyan-500 text-slate-950 font-bold px-8 py-3 rounded-xl text-sm hover:bg-cyan-400 transition-all duration-300 hover:scale-105">
-                    Ver la solución →
-                </a>
+            <!-- Dolor 2: Información atrapada (Bellai Core - RAG) -->
+            <div class="pain-item" data-aos="fade-left" data-aos-delay="200">
+                <div class="pain-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00e5ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                        <polyline points="10 9 9 9 8 9"></polyline>
+                    </svg>
+                </div>
+                <div>
+                    <h4 class="text-base font-bold text-white mb-1">Información atrapada en documentos</h4>
+                    <p class="text-xs text-slate-400">Tienes miles de PDFs y documentos internos, pero encontrar una respuesta específica toma horas. Tu conocimiento está ahí, pero no puedes acceder a él.</p>
+                </div>
+            </div>
+            
+            <!-- Dolor 3: Decisiones sin datos (Bellai Guard - Analítica) -->
+            <div class="pain-item" data-aos="fade-right" data-aos-delay="300">
+                <div class="pain-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00e5ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="20" x2="18" y2="10"></line>
+                        <line x1="12" y1="20" x2="12" y2="4"></line>
+                        <line x1="6" y1="20" x2="6" y2="14"></line>
+                    </svg>
+                </div>
+                <div>
+                    <h4 class="text-base font-bold text-white mb-1">Decisiones sin datos verificables</h4>
+                    <p class="text-xs text-slate-400">Tomas decisiones financieras o comerciales basadas en intuición porque no puedes cruzar tus bases de datos en tiempo real. Lo que no se mide, no se puede mejorar.</p>
+                </div>
+            </div>
+            
+            <!-- Dolor 4: Web que no convierte (Bellai Web) -->
+            <div class="pain-item" data-aos="fade-left" data-aos-delay="400">
+                <div class="pain-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00e5ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                        <line x1="8" y1="21" x2="16" y2="21"></line>
+                        <line x1="12" y1="17" x2="12" y2="21"></line>
+                    </svg>
+                </div>
+                <div>
+                    <h4 class="text-base font-bold text-white mb-1">Presencia digital que no convierte</h4>
+                    <p class="text-xs text-slate-400">Tu web tarda más de 3 segundos en cargar, no está optimizada para móvil o no guía al visitante hacia una acción. Cada segundo de demora = dinero perdido.</p>
+                </div>
             </div>
         </div>
-    </section>
+        
+        <div class="text-center mt-12" data-aos="fade-up">
+            <p class="text-sm text-slate-300 mb-6">Si te identificaste con al menos uno, <span class="text-cyan-400 font-bold">sigue leyendo</span>. La solución está abajo 👇</p>
+            <a href="#servicios" class="btn-shimmer inline-block bg-cyan-500 text-slate-950 font-bold px-8 py-3 rounded-xl text-sm hover:bg-cyan-400 transition-all duration-300 hover:scale-105">
+                Ver la solución →
+            </a>
+        </div>
+    </div>
+</section>
 
     <!-- Casos -->
     <section id="casos" class="py-20 px-4 max-w-6xl mx-auto">
