@@ -27,7 +27,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/static/favicon/apple-touch-icon.png">
     <link rel="manifest" href="/static/manifest.json">
 
-    <!-- CSS local (build de Tailwind, sin CDN) -->
+    <!-- CSS local (con ?v=3 para romper caché) -->
     <link rel="stylesheet" href="/static/css/styles.css?v=3">
     <link rel="stylesheet" href="/static/css/aos.css">
 
@@ -85,7 +85,7 @@
     <nav class="sticky top-0 z-40 bg-[#0D111A]/90 backdrop-blur border-b border-slate-800" aria-label="Navegación principal">
         <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center gap-3">
             
-            <!-- LOGO: carabellai.png (círculo pequeño) -->
+            <!-- LOGO -->
             <a href="/" class="flex items-center space-x-3 shrink-0" aria-label="Bellai Home">
                 <img src="/static/img/carabellai.png" alt="Logo Bellai" class="h-10 w-10 rounded-full border border-cyan-400 object-cover" fetchpriority="high">
                 <div class="flex items-baseline text-2xl md:text-3xl font-extrabold tracking-tight">
@@ -103,7 +103,6 @@
             
             <!-- DERECHA: Banderas + Botón Agendar con brillo -->
             <div class="flex items-center gap-3 shrink-0">
-                <!-- BANDERAS ES/EN -->
                 <div class="flex items-center gap-2 shrink-0">
                     <a href="/" title="Español" class="flag-btn {% if lang == 'es' %}active{% endif %}">ES</a>
                     <a href="/en" title="English" class="flag-btn {% if lang == 'en' %}active{% endif %}">EN</a>
@@ -146,7 +145,6 @@
                 {{ t.hero_desc }}
             </p>
             <div class="flex flex-col sm:flex-row gap-4">
-                <!-- BOTÓN PRIMARIO -->
                 <a href="#contacto" class="btn-shimmer inline-flex items-center justify-center gap-2 bg-cyan-500 text-slate-950 font-bold px-6 py-3.5 rounded-xl text-sm hover:bg-cyan-400 focus-visible:ring-2 focus-visible:ring-cyan-300 transition-colors duration-300 whitespace-nowrap">
                     {{ t.hero_cta_1 }}
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="shrink-0">
@@ -154,7 +152,6 @@
                         <polyline points="12 5 19 12 12 19"></polyline>
                     </svg>
                 </a>
-                <!-- BOTÓN SECUNDARIO -->
                 <a href="#casos" class="border border-slate-700 hover:border-cyan-500 text-slate-300 font-semibold px-6 py-3.5 rounded-xl text-center text-sm transition focus-visible:ring-2 focus-visible:ring-cyan-300 whitespace-nowrap">
                     {{ t.hero_cta_2 }}
                 </a>
@@ -165,7 +162,6 @@
                 <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-90 shadow-[0_0_10px_rgba(34,211,238,1)]"></div>
                 <div class="w-full h-[300px] rounded-2xl overflow-hidden bg-[#05070B] mb-5 border-2 border-cyan-400/80 flex justify-center items-center relative shadow-[0_0_25px_rgba(6,182,212,0.5),inset_0_0_20px_rgba(0,0,0,0.8)]">
                     <div class="absolute inset-0 bg-gradient-to-t from-cyan-900/20 to-transparent pointer-events-none z-10"></div>
-                    <!-- IMAGEN BULLDOG: clase bulldog-img -->
                     <img src="/static/img/bellailogo.webp" alt="Mascota Bellai Cyber-Bulldog" class="w-full h-full object-cover relative z-0 bulldog-img" loading="lazy" decoding="async">
                 </div>
                 <div class="bg-[#05070B]/90 p-4 rounded-xl border border-cyan-500/40 flex items-center justify-between shadow-[inset_0_0_15px_rgba(6,182,212,0.1)]">
@@ -238,18 +234,17 @@
         </div>
     </section>
 
-    <!-- SECCIÓN: EL DOLOR (CON SVGs, SIN EMOJIS) -->
+    <!-- SECCIÓN: EL DOLOR (CON TRADUCCIONES) -->
     <section class="py-20 px-4 bg-[#05070B]">
         <div class="max-w-4xl mx-auto">
             <div class="text-center mb-12" data-aos="fade-up">
-                <h2 class="text-xs font-bold text-cyan-400 tracking-wider uppercase mb-3">¿Te suena familiar?</h2>
+                <h2 class="text-xs font-bold text-cyan-400 tracking-wider uppercase mb-3">{{ t.pain_subtitle }}</h2>
                 <h3 class="text-2xl md:text-4xl font-extrabold text-white">
-                    Tu negocio está <span class="text-cyan-400">perdiendo dinero</span> cada día
+                    {{ t.pain_title_start }} <span class="text-cyan-400">{{ t.pain_title_highlight }}</span> {{ t.pain_title_end }}
                 </h3>
             </div>
             
             <div class="grid md:grid-cols-2 gap-6">
-                <!-- Dolor 1: Leads que se enfrían -->
                 <div class="pain-item" data-aos="fade-right" data-aos-delay="100">
                     <div class="pain-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00e5ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -258,12 +253,11 @@
                         </svg>
                     </div>
                     <div>
-                        <h4 class="text-base font-bold text-white mb-1">Leads que se enfrían</h4>
-                        <p class="text-xs text-slate-400">El 78% de los clientes compra al primero que responde. Si tardas más de 5 minutos, ya perdiste la venta.</p>
+                        <h4 class="text-base font-bold text-white mb-1">{{ t.pain_1_title }}</h4>
+                        <p class="text-xs text-slate-400">{{ t.pain_1_desc }}</p>
                     </div>
                 </div>
                 
-                <!-- Dolor 2: Información atrapada -->
                 <div class="pain-item" data-aos="fade-left" data-aos-delay="200">
                     <div class="pain-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00e5ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -275,12 +269,11 @@
                         </svg>
                     </div>
                     <div>
-                        <h4 class="text-base font-bold text-white mb-1">Información atrapada en documentos</h4>
-                        <p class="text-xs text-slate-400">Tienes miles de PDFs y documentos internos, pero encontrar una respuesta específica toma horas. Tu conocimiento está ahí, pero no puedes acceder a él.</p>
+                        <h4 class="text-base font-bold text-white mb-1">{{ t.pain_2_title }}</h4>
+                        <p class="text-xs text-slate-400">{{ t.pain_2_desc }}</p>
                     </div>
                 </div>
                 
-                <!-- Dolor 3: Decisiones sin datos -->
                 <div class="pain-item" data-aos="fade-right" data-aos-delay="300">
                     <div class="pain-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00e5ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -290,12 +283,11 @@
                         </svg>
                     </div>
                     <div>
-                        <h4 class="text-base font-bold text-white mb-1">Decisiones sin datos verificables</h4>
-                        <p class="text-xs text-slate-400">Tomas decisiones financieras o comerciales basadas en intuición porque no puedes cruzar tus bases de datos en tiempo real. Lo que no se mide, no se puede mejorar.</p>
+                        <h4 class="text-base font-bold text-white mb-1">{{ t.pain_3_title }}</h4>
+                        <p class="text-xs text-slate-400">{{ t.pain_3_desc }}</p>
                     </div>
                 </div>
                 
-                <!-- Dolor 4: Web que no convierte -->
                 <div class="pain-item" data-aos="fade-left" data-aos-delay="400">
                     <div class="pain-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00e5ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -305,17 +297,16 @@
                         </svg>
                     </div>
                     <div>
-                        <h4 class="text-base font-bold text-white mb-1">Presencia digital que no convierte</h4>
-                        <p class="text-xs text-slate-400">Tu web tarda más de 3 segundos en cargar, no está optimizada para móvil o no guía al visitante hacia una acción. Cada segundo de demora = dinero perdido.</p>
+                        <h4 class="text-base font-bold text-white mb-1">{{ t.pain_4_title }}</h4>
+                        <p class="text-xs text-slate-400">{{ t.pain_4_desc }}</p>
                     </div>
                 </div>
             </div>
             
             <div class="text-center mt-12" data-aos="fade-up">
-                <p class="text-sm text-slate-300 mb-6">Si te identificaste con al menos uno, <span class="text-cyan-400 font-bold">sigue leyendo</span>. La solución está abajo</p>
-                <!-- BOTÓN VER LA SOLUCIÓN -->
+                <p class="text-sm text-slate-300 mb-6">{{ t.pain_cta_text }} <span class="text-cyan-400 font-bold">{{ t.pain_cta_highlight }}</span>{{ t.pain_cta_end }}</p>
                 <a href="#servicios" class="btn-solucion bg-cyan-500 text-slate-950 font-bold px-8 py-3 rounded-xl text-sm hover:bg-cyan-400 transition-all duration-300 hover:scale-105">
-                    <span>Ver la solución</span>
+                    <span>{{ t.pain_cta_btn }}</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                         <line x1="5" y1="12" x2="19" y2="12"></line>
                         <polyline points="12 5 19 12 12 19"></polyline>
@@ -325,7 +316,7 @@
         </div>
     </section>
 
-    <!-- Servicios -->
+    <!-- Servicios (CON TRADUCCIONES) -->
     <section id="servicios" class="py-20 bg-[#0D111A]/30 px-4">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16" data-aos="fade-up">
@@ -345,15 +336,15 @@
                         </svg>
                     </div>
                     <h4 class="text-xl font-bold text-white mb-2">{{ t.service_1_title }}</h4>
-                    <p class="text-xs text-cyan-400 font-bold mb-3">Fundación Digital de Alta Conversión</p>
-                    <p class="text-xs text-slate-400 mb-4 italic">Ideal para: Empresas, clínicas, constructoras y firmas que necesitan proyectar autoridad inmediata.</p>
+                    <p class="text-xs text-cyan-400 font-bold mb-3">{{ t.service_1_sub }}</p>
+                    <p class="text-xs text-slate-400 mb-4 italic">{{ t.service_1_ideal }}</p>
                     <ul class="text-xs text-slate-300 space-y-2">
-                        <li>✓ Desarrollo web Mobile-First ultrarrápido (&lt; 2s)</li>
-                        <li>✓ Arquitectura bilingüe (ES/EN) lista para clientes internacionales</li>
-                        <li>✓ Calculadoras interactivas y enrutamiento directo a WhatsApp</li>
+                        <li>✓ {{ t.service_1_item_1 }}</li>
+                        <li>✓ {{ t.service_1_item_2 }}</li>
+                        <li>✓ {{ t.service_1_item_3 }}</li>
                     </ul>
                     <div class="mt-4 pt-4 border-t border-slate-700">
-                        <p class="text-xs text-cyan-400 font-semibold">Resultado: Una carta de presentación que filtra curiosos y atrae compradores reales.</p>
+                        <p class="text-xs text-cyan-400 font-semibold">{{ t.service_1_result }}</p>
                     </div>
                 </div>
 
@@ -367,15 +358,15 @@
                         </svg>
                     </div>
                     <h4 class="text-xl font-bold text-white mb-2">{{ t.service_2_title }}</h4>
-                    <p class="text-xs text-blue-400 font-bold mb-3">Embudos Comerciales y Operación Autónoma 24/7</p>
-                    <p class="text-xs text-slate-400 mb-4 italic">Ideal para: Negocios con alto flujo de mensajes que necesitan calificar leads sin saturar a su equipo.</p>
+                    <p class="text-xs text-blue-400 font-bold mb-3">{{ t.service_2_sub }}</p>
+                    <p class="text-xs text-slate-400 mb-4 italic">{{ t.service_2_ideal }}</p>
                     <ul class="text-xs text-slate-300 space-y-2">
-                        <li>✓ Agentes comerciales inteligentes en WhatsApp y Web 24/7</li>
-                        <li>✓ Calificación automática de presupuesto y agendamiento</li>
-                        <li>✓ Recuperación de cotizaciones abandonadas y conexión con CRM</li>
+                        <li>✓ {{ t.service_2_item_1 }}</li>
+                        <li>✓ {{ t.service_2_item_2 }}</li>
+                        <li>✓ {{ t.service_2_item_3 }}</li>
                     </ul>
                     <div class="mt-4 pt-4 border-t border-slate-700">
-                        <p class="text-xs text-blue-400 font-semibold">Resultado: Su fuerza de ventas recibe únicamente prospectos calificados y listos para cerrar.</p>
+                        <p class="text-xs text-blue-400 font-semibold">{{ t.service_2_result }}</p>
                     </div>
                 </div>
 
@@ -389,15 +380,15 @@
                         </svg>
                     </div>
                     <h4 class="text-xl font-bold text-white mb-2">{{ t.service_3_title }}</h4>
-                    <p class="text-xs text-purple-400 font-bold mb-3">Inteligencia Documental y Analítica de Precisión Quirúrgica</p>
-                    <p class="text-xs text-slate-400 mb-4 italic">Ideal para: Firmas jurídicas, clínicas, aseguradoras y empresas con alto volumen de documentos críticos.</p>
+                    <p class="text-xs text-purple-400 font-bold mb-3">{{ t.service_3_sub }}</p>
+                    <p class="text-xs text-slate-400 mb-4 italic">{{ t.service_3_ideal }}</p>
                     <ul class="text-xs text-slate-300 space-y-2">
-                        <li>✓ Sistemas RAG: IA conectada a sus PDFs y bases de datos con cero alucinaciones</li>
-                        <li>✓ Motores Neuro-Simbólicos: Cálculos financieros y estadísticos exactos</li>
-                        <li>✓ Auditorías de horas resueltas en segundos con respaldo verificable</li>
+                        <li>✓ {{ t.service_3_item_1 }}</li>
+                        <li>✓ {{ t.service_3_item_2 }}</li>
+                        <li>✓ {{ t.service_3_item_3 }}</li>
                     </ul>
                     <div class="mt-4 pt-4 border-t border-slate-700">
-                        <p class="text-xs text-purple-400 font-semibold">Resultado: Decisiones gerenciales respaldadas por matemáticas exactas y cumplimiento normativo blindado.</p>
+                        <p class="text-xs text-purple-400 font-semibold">{{ t.service_3_result }}</p>
                     </div>
                 </div>
 
@@ -447,7 +438,7 @@
         </div>
     </section>
 
-    <!-- Calculadora ROI -->
+    <!-- Calculadora ROI (CON DISCLAIMER TRADUCIBLE) -->
     <section id="calculadora" class="py-16 px-4 max-w-4xl mx-auto text-center" data-aos="fade-up">
         <div class="bg-gradient-to-b from-[#0D111A] to-[#05070B] border-2 border-cyan-500/50 p-8 rounded-3xl relative overflow-hidden shadow-[0_0_35px_rgba(6,182,212,0.15),inset_0_0_15px_rgba(6,182,212,0.03)]">
             <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-90 shadow-[0_0_10px_rgba(34,211,238,1)]"></div>
@@ -466,12 +457,12 @@
             <div class="mt-8 bg-[#05070B] p-4 rounded-xl border border-cyan-500/30 max-w-md mx-auto">
                 <p class="text-xs text-slate-300">{{ t.calc_result_desc }}</p>
                 <p id="roiResult" class="text-3xl font-extrabold text-cyan-400 mt-1" aria-live="polite">$7.500.000 {{ t.calc_currency }}</p>
-                <p class="text-[10px] text-slate-500 mt-3 italic">* Estimación comercial proyectada con base en tasas promedio de recuperación por respuesta inmediata. Validaremos las métricas reales de su operación durante el diagnóstico gratuito.</p>
+                <p class="text-[10px] text-slate-500 mt-3 italic">{{ t.calc_disclaimer }}</p>
             </div>
         </div>
     </section>
 
-    <!-- FAQ -->
+    <!-- FAQ (CON TRADUCCIONES) -->
     <section id="faq" class="py-20 px-4 max-w-4xl mx-auto" data-aos="fade-up">
         <div class="text-center mb-12">
             <h2 class="text-xs font-bold text-cyan-400 tracking-wider uppercase mb-2">{{ t.faq_subtitle }}</h2>
@@ -479,25 +470,25 @@
         </div>
         <div class="space-y-4">
             <details class="bg-[#0D111A]/75 border border-slate-800 rounded-xl p-5">
-                <summary class="cursor-pointer text-sm font-bold text-white">¿Cómo garantizan que la Inteligencia Artificial no invente datos (Cero Alucinaciones)?</summary>
-                <p class="text-xs text-slate-300 mt-3">Implementamos arquitectura RAG (Generación Aumentada por Recuperación) combinada con motores analíticos exactos. A diferencia de un chat público convencional, nuestros sistemas tienen prohibido responder fuera de sus fuentes autorizadas: consultan sus PDFs, bases de datos o normativas y entregan la respuesta citando el documento exacto de origen.</p>
+                <summary class="cursor-pointer text-sm font-bold text-white">{{ t.faq_q1 }}</summary>
+                <p class="text-xs text-slate-300 mt-3">{{ t.faq_a1 }}</p>
             </details>
             <details class="bg-[#0D111A]/75 border border-slate-800 rounded-xl p-5">
-                <summary class="cursor-pointer text-sm font-bold text-white">¿Nuestros documentos y bases de datos corporativas están seguros?</summary>
-                <p class="text-xs text-slate-300 mt-3">Absolutamente. Trabajamos bajo estrictos protocolos de privacidad, aislamiento de datos y cumplimiento de la Ley 1581 de 2012 en Colombia. Su información nunca se utiliza para entrenar modelos públicos; permanece en entornos privados bajo su control.</p>
+                <summary class="cursor-pointer text-sm font-bold text-white">{{ t.faq_q2 }}</summary>
+                <p class="text-xs text-slate-300 mt-3">{{ t.faq_a2 }}</p>
             </details>
             <details class="bg-[#0D111A]/75 border border-slate-800 rounded-xl p-5">
-                <summary class="cursor-pointer text-sm font-bold text-white">¿Cuánto tiempo toma ver resultados e implementar una solución?</summary>
-                <p class="text-xs text-slate-300 mt-3">Gracias a nuestra arquitectura modular, una plataforma web de alta conversión o un embudo comercial automatizado se despliega entre 2 y 3 semanas. Los sistemas RAG y motores analíticos a medida se estructuran por fases rápidas con entregables funcionales desde las primeras semanas.</p>
+                <summary class="cursor-pointer text-sm font-bold text-white">{{ t.faq_q3 }}</summary>
+                <p class="text-xs text-slate-300 mt-3">{{ t.faq_a3 }}</p>
             </details>
             <details class="bg-[#0D111A]/75 border border-slate-800 rounded-xl p-5">
-                <summary class="cursor-pointer text-sm font-bold text-white">¿Qué incluye exactamente el Diagnóstico Gratuito?</summary>
-                <p class="text-xs text-slate-300 mt-3">Es una sesión ejecutiva de 20 minutos donde auditamos su presencia web actual, identificamos dónde se están fugando sus prospectos o dónde hay cuellos de botella documentales, y le entregamos una hoja de ruta clara con la arquitectura recomendada (sin compromiso de compra).</p>
+                <summary class="cursor-pointer text-sm font-bold text-white">{{ t.faq_q4 }}</summary>
+                <p class="text-xs text-slate-300 mt-3">{{ t.faq_a4 }}</p>
             </details>
         </div>
     </section>
 
-    <!-- Formulario -->
+    <!-- Formulario (CON TRADUCCIONES) -->
     <section id="contacto" class="py-20 px-4 max-w-2xl mx-auto" data-aos="fade-up">
         <div class="bg-gradient-to-b from-[#0D111A] to-[#05070B] border-2 border-cyan-500/50 p-8 md:p-10 rounded-3xl relative overflow-hidden shadow-[0_0_35px_rgba(6,182,212,0.15),inset_0_0_15px_rgba(6,182,212,0.03)]">
             <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-90 shadow-[0_0_10px_rgba(34,211,238,1)]"></div>
@@ -513,26 +504,26 @@
                         <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                         <polyline points="22 4 12 14.01 9 11.01"></polyline>
                     </svg>
-                    Lo que recibirá tras agendar:
+                    {{ t.form_benefits_title }}
                 </h4>
                 <ul class="space-y-3">
                     <li class="flex items-start gap-3">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00e5ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 shrink-0">
                             <polyline points="20 6 9 17 4 12"></polyline>
                         </svg>
-                        <span class="text-xs text-slate-300">Auditoría rápida de velocidad y conversión de su canal actual</span>
+                        <span class="text-xs text-slate-300">{{ t.form_benefit_1 }}</span>
                     </li>
                     <li class="flex items-start gap-3">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00e5ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 shrink-0">
                             <polyline points="20 6 9 17 4 12"></polyline>
                         </svg>
-                        <span class="text-xs text-slate-300">Identificación de oportunidades de automatización o búsqueda documental (RAG)</span>
+                        <span class="text-xs text-slate-300">{{ t.form_benefit_2 }}</span>
                     </li>
                     <li class="flex items-start gap-3">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00e5ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 shrink-0">
                             <polyline points="20 6 9 17 4 12"></polyline>
                         </svg>
-                        <span class="text-xs text-slate-300">Propuesta técnica y comercial clara, sin letra pequeña</span>
+                        <span class="text-xs text-slate-300">{{ t.form_benefit_3 }}</span>
                     </li>
                 </ul>
             </div>
@@ -569,7 +560,6 @@
                         {{ t.form_consent | safe }}
                     </label>
                 </div>
-                <!-- BOTÓN FORMULARIO -->
                 <button type="submit" id="submitBtn"
                     class="btn-formulario w-full bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold p-3.5 rounded-xl text-sm transition focus-visible:ring-2 focus-visible:ring-cyan-300 disabled:opacity-60 disabled:cursor-not-allowed">
                     <span>{{ t.form_btn }}</span>
