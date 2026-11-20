@@ -19,7 +19,7 @@
     <meta property="og:image:secure_url" content="https://bellaico.com/static/img/og-image.webp">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:type" content="image/webp">
     <meta property="og:locale" content="es_CO">
 
     <!-- Twitter / X Card -->
@@ -32,8 +32,8 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/static/favicon/apple-touch-icon.png">
     <link rel="manifest" href="/static/manifest.json">
 
-    <!-- CSS local (con ?v=6 para romper caché) -->
-    <link rel="stylesheet" href="/static/css/styles.css?v=6">
+    <!-- CSS local (con ?v=7 para romper caché) -->
+    <link rel="stylesheet" href="/static/css/styles.css?v=7">
     <link rel="stylesheet" href="/static/css/aos.css">
 
     <!-- Schema.org JSON-LD -->
@@ -124,8 +124,63 @@
         </div>
     </nav>
 
-    <!-- Hero CON EFECTO NEURAL -->
-    <section class="relative pt-12 pb-20 px-4 max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center bg-neural">
+    <!-- Hero CON EFECTO NEURAL ANIMADO ORIGINAL -->
+    <section class="relative pt-12 pb-20 px-4 max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+        
+        <!-- FONDO NEURAL ANIMADO (solo en Hero) -->
+        <div class="hero-neural-bg" aria-hidden="true">
+            <div class="neural-glow"></div>
+            <div class="neural-particles">
+                <div class="particle p1"></div>
+                <div class="particle p2"></div>
+                <div class="particle p3"></div>
+                <div class="particle p4"></div>
+                <div class="particle p5"></div>
+                <div class="particle p6"></div>
+                <div class="particle p7"></div>
+                <div class="particle p8"></div>
+                <div class="particle p9"></div>
+                <div class="particle p10"></div>
+                <div class="particle p11"></div>
+                <div class="particle p12"></div>
+            </div>
+            <svg class="neural-network-svg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
+                <g class="neural-lines">
+                    <line x1="100" y1="100" x2="300" y2="200"/>
+                    <line x1="300" y1="200" x2="500" y2="150"/>
+                    <line x1="500" y1="150" x2="700" y2="300"/>
+                    <line x1="200" y1="400" x2="400" y2="350"/>
+                    <line x1="400" y1="350" x2="600" y2="450"/>
+                    <line x1="150" y1="250" x2="350" y2="300"/>
+                    <line x1="350" y1="300" x2="550" y2="250"/>
+                    <line x1="250" y1="500" x2="450" y2="450"/>
+                    <line x1="450" y1="450" x2="650" y2="500"/>
+                    <line x1="100" y1="500" x2="300" y2="450"/>
+                    <line x1="500" y1="100" x2="700" y2="200"/>
+                    <line x1="200" y1="150" x2="400" y2="100"/>
+                    <line x1="600" y1="350" x2="750" y2="400"/>
+                    <line x1="50" y1="300" x2="200" y2="350"/>
+                    <line x1="300" y1="50" x2="500" y2="100"/>
+                    <line x1="100" y1="350" x2="250" y2="450"/>
+                    <line x1="550" y1="500" x2="700" y2="450"/>
+                    <line x1="400" y1="200" x2="550" y2="350"/>
+                </g>
+                <g class="neural-nodes">
+                    <circle cx="100" cy="100" r="4"/>
+                    <circle cx="300" cy="200" r="4"/>
+                    <circle cx="500" cy="150" r="4"/>
+                    <circle cx="700" cy="300" r="4"/>
+                    <circle cx="200" cy="400" r="4"/>
+                    <circle cx="400" cy="350" r="4"/>
+                    <circle cx="600" cy="450" r="4"/>
+                    <circle cx="150" cy="250" r="4"/>
+                    <circle cx="350" cy="300" r="4"/>
+                    <circle cx="550" cy="250" r="4"/>
+                    <circle cx="250" cy="500" r="4"/>
+                </g>
+            </svg>
+        </div>
+
         <div class="hero-content" data-aos="fade-right">
             <!-- BADGE: CHIP SVG + TEXTO EN LA MISMA LÍNEA -->
             <div class="badge-hero">
@@ -239,7 +294,7 @@
         </div>
     </section>
 
-    <!-- SECCIÓN: EL DOLOR (CON TRADUCCIONES) -->
+    <!-- SECCIÓN: EL DOLOR -->
     <section class="py-20 px-4 bg-[#05070B]">
         <div class="max-w-4xl mx-auto">
             <div class="text-center mb-12" data-aos="fade-up">
@@ -321,8 +376,8 @@
         </div>
     </section>
 
-    <!-- Servicios CON EFECTO NEURAL -->
-    <section id="servicios" class="py-20 bg-[#0D111A]/30 px-4 bg-neural">
+    <!-- Servicios (SIN efecto neural, fondo limpio) -->
+    <section id="servicios" class="py-20 bg-[#0D111A]/30 px-4">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-xs font-bold text-cyan-400 tracking-wider uppercase mb-2">{{ t.services_subtitle }}</h2>
@@ -578,8 +633,8 @@
         </div>
     </section>
 
-    <!-- Footer CON EFECTO NEURAL -->
-    <footer class="border-t border-slate-800 py-10 px-4 text-xs text-slate-400 bg-neural">
+    <!-- Footer (SIN efecto neural, fondo limpio) -->
+    <footer class="border-t border-slate-800 py-10 px-4 text-xs text-slate-400">
         <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
             <div>
                 <p class="font-bold text-white mb-2">BELLAI</p>
@@ -598,7 +653,7 @@
         <p class="text-center mt-8">{{ t.footer_rights }}</p>
     </footer>
 
-    <!-- WIDGET FLOTANTE DE ASESOR VIRTUAL IA (TRADUCIBLE) -->
+    <!-- WIDGET FLOTANTE DE ASESOR VIRTUAL IA -->
     <div id="ai-widget-root">
         <div id="ai-chat-window">
             <div class="chat-header">
