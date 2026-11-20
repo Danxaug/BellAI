@@ -2130,3 +2130,13 @@ a[href="#servicios"].btn-shimmer {
 .no-shrink {
     flex-shrink: 0 !important;
 }
+/* ============================================
+   FIX CRÍTICO: Clases para botones y SVGs
+   ============================================ */
+.btn-min-width {
+    min-width: 220px !important;
+}
+
+.no-shrink {
+    flex-shrink: 0 !important;
+}
