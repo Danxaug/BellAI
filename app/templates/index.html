@@ -27,8 +27,8 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/static/favicon/apple-touch-icon.png">
     <link rel="manifest" href="/static/manifest.json">
 
-    <!-- CSS local (con ?v=3 para romper caché) -->
-    <link rel="stylesheet" href="/static/css/styles.css?v=3">
+    <!-- CSS local (con ?v=4 para romper caché) -->
+    <link rel="stylesheet" href="/static/css/styles.css?v=4">
     <link rel="stylesheet" href="/static/css/aos.css">
 
     <!-- Schema.org JSON-LD -->
@@ -112,7 +112,7 @@
                 <a href="https://api.whatsapp.com/send?phone={{ whatsapp_phone }}&text=Hola%20Bellai,%20quiero%20agendar%20mi%20diagn%C3%B3stico%20gratuito"
                    target="_blank" rel="noopener noreferrer"
                    class="btn-agendar-shimmer">
-                    <span class="md:hidden">Agendar</span>
+                    <span class="md:hidden">{{ t.nav_cta_mobile }}</span>
                     <span class="hidden md:inline">{{ t.nav_cta }}</span>
                 </a>
             </div>
@@ -438,7 +438,7 @@
         </div>
     </section>
 
-    <!-- Calculadora ROI (CON DISCLAIMER TRADUCIBLE) -->
+    <!-- Calculadora ROI -->
     <section id="calculadora" class="py-16 px-4 max-w-4xl mx-auto text-center" data-aos="fade-up">
         <div class="bg-gradient-to-b from-[#0D111A] to-[#05070B] border-2 border-cyan-500/50 p-8 rounded-3xl relative overflow-hidden shadow-[0_0_35px_rgba(6,182,212,0.15),inset_0_0_15px_rgba(6,182,212,0.03)]">
             <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-90 shadow-[0_0_10px_rgba(34,211,238,1)]"></div>
@@ -462,7 +462,7 @@
         </div>
     </section>
 
-    <!-- FAQ (CON TRADUCCIONES) -->
+    <!-- FAQ -->
     <section id="faq" class="py-20 px-4 max-w-4xl mx-auto" data-aos="fade-up">
         <div class="text-center mb-12">
             <h2 class="text-xs font-bold text-cyan-400 tracking-wider uppercase mb-2">{{ t.faq_subtitle }}</h2>
@@ -488,7 +488,7 @@
         </div>
     </section>
 
-    <!-- Formulario (CON TRADUCCIONES) -->
+    <!-- Formulario -->
     <section id="contacto" class="py-20 px-4 max-w-2xl mx-auto" data-aos="fade-up">
         <div class="bg-gradient-to-b from-[#0D111A] to-[#05070B] border-2 border-cyan-500/50 p-8 md:p-10 rounded-3xl relative overflow-hidden shadow-[0_0_35px_rgba(6,182,212,0.15),inset_0_0_15px_rgba(6,182,212,0.03)]">
             <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-90 shadow-[0_0_10px_rgba(34,211,238,1)]"></div>
@@ -593,15 +593,15 @@
         <p class="text-center mt-8">{{ t.footer_rights }}</p>
     </footer>
 
-    <!-- WIDGET FLOTANTE DE ASESOR VIRTUAL IA -->
+    <!-- WIDGET FLOTANTE DE ASESOR VIRTUAL IA (TRADUCIBLE) -->
     <div id="ai-widget-root">
         <div id="ai-chat-window">
             <div class="chat-header">
                 <div class="chat-header-info">
                     <span class="chat-status-dot"></span>
                     <div>
-                        <p class="chat-title">Asesor IA — BellAI</p>
-                        <p class="chat-subtitle">Online 24/7</p>
+                        <p class="chat-title">{{ t.chat_title }}</p>
+                        <p class="chat-subtitle">{{ t.chat_subtitle }}</p>
                     </div>
                 </div>
                 <button id="close-chat-btn" type="button" class="chat-close-btn">✕</button>
@@ -610,13 +610,13 @@
                 <div class="msg-bot">¡Hola! Soy el asesor virtual inteligente de <strong>BELLAI</strong>. ¿En qué te ayudo hoy con tu automatización o negocio?</div>
             </div>
             <form id="chat-form">
-                <input type="text" id="chat-input" placeholder="Escribe tu mensaje..." autocomplete="off">
-                <button type="submit" id="chat-submit-btn">Enviar</button>
+                <input type="text" id="chat-input" placeholder="{{ t.chat_placeholder }}" autocomplete="off">
+                <button type="submit" id="chat-submit-btn">{{ t.chat_send }}</button>
             </form>
         </div>
         <button id="toggle-chat-btn" type="button">
             <span class="pulse-dot"></span>
-            <span>Asesor IA</span>
+            <span>{{ t.chat_button }}</span>
         </button>
     </div>
 

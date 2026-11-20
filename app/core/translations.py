@@ -7,6 +7,7 @@ TRANSLATIONS = {
         "nav_calc": "Calculadora ROI",
         "nav_faq": "FAQ",
         "nav_cta": "Agendar Diagnóstico",
+        "nav_cta_mobile": "Agendar",
         "banner_text": "AGENDA ABIERTA EN EL VALLE DEL CAUCA: Solo 3 cupos disponibles este mes.",
         
         "hero_badge": "Inteligencia Artificial & Full-Stack Engineering",
@@ -42,7 +43,6 @@ TRANSLATIONS = {
         "case_3_desc": "Plataforma visual de alta gama con asesoría consultiva IA.",
         "case_3_tech": "Tech: Tailwind Dark + AI Sales Assistant",
         
-        # SECCIÓN EL DOLOR (NUEVO)
         "pain_subtitle": "¿Te suena familiar?",
         "pain_title_start": "Tu negocio está",
         "pain_title_highlight": "perdiendo dinero",
@@ -121,6 +121,13 @@ TRANSLATIONS = {
         "form_opt_3": "Bellai Guard (Enterprise Data)",
         "form_consent": "Acepto la <a href='/privacidad' class='text-cyan-400 underline'>política de privacidad</a> y el tratamiento de mis datos (Ley 1581 de 2012).",
         "form_btn": "Solicitar Diagnóstico por WhatsApp",
+        
+        "chat_title": "Asesor IA — BellAI",
+        "chat_subtitle": "Online 24/7",
+        "chat_button": "Asesor IA",
+        "chat_send": "Enviar",
+        "chat_placeholder": "Escribe tu mensaje...",
+        
         "footer_desc": "Soluciones de Automatización Cognitiva. Cali, Colombia.",
         "footer_legal": "Legal",
         "footer_privacy": "Política de Privacidad",
@@ -134,6 +141,7 @@ TRANSLATIONS = {
         "nav_calc": "ROI Calculator",
         "nav_faq": "FAQ",
         "nav_cta": "Book Diagnostic",
+        "nav_cta_mobile": "Book",
         "banner_text": "OPEN SCHEDULE IN VALLE DEL CAUCA: Only 3 spots available this month.",
         
         "hero_badge": "Artificial Intelligence & Full-Stack Engineering",
@@ -169,7 +177,6 @@ TRANSLATIONS = {
         "case_3_desc": "High-end visual platform with AI consulting advisory.",
         "case_3_tech": "Tech: Tailwind Dark + AI Sales Assistant",
         
-        # PAIN SECTION (NEW)
         "pain_subtitle": "Does this sound familiar?",
         "pain_title_start": "Your business is",
         "pain_title_highlight": "losing money",
@@ -248,6 +255,13 @@ TRANSLATIONS = {
         "form_opt_3": "Bellai Guard (Enterprise Data)",
         "form_consent": "I accept the <a href='/privacidad' class='text-cyan-400 underline'>privacy policy</a> and the processing of my data (Law 1581 of 2012).",
         "form_btn": "Request Diagnostic via WhatsApp",
+        
+        "chat_title": "AI Advisor — BellAI",
+        "chat_subtitle": "Online 24/7",
+        "chat_button": "AI Advisor",
+        "chat_send": "Send",
+        "chat_placeholder": "Type your message...",
+        
         "footer_desc": "Cognitive Automation Solutions. Cali, Colombia.",
         "footer_legal": "Legal",
         "footer_privacy": "Privacy Policy",
