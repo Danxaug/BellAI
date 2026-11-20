@@ -95,9 +95,14 @@
 </head>
 <body class="bg-[#05070B] text-slate-100 font-sans overflow-x-hidden">
 
-    <!-- Announcement -->
+    <!-- Announcement (SIN EMOJI) -->
     <div class="bg-gradient-to-r from-blue-900 via-[#05070B] to-cyan-900 text-center py-2 px-4 text-xs font-semibold text-cyan-300 border-b border-cyan-500/20">
-        {{ t.banner_text }}
+        <span class="inline-flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"></path>
+            </svg>
+            {{ t.banner_text }}
+        </span>
     </div>
 
     <!-- Nav -->
@@ -133,7 +138,7 @@
                    target="_blank" rel="noopener noreferrer"
                    class="btn-shimmer bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs px-3 py-2 md:px-5 md:py-2.5 md:text-sm rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(6,182,212,0.4)] focus-visible:ring-2 focus-visible:ring-cyan-300 whitespace-nowrap">
                     <span class="md:hidden">Agendar</span>
-                    <span class="hidden md:inline">Agendar Ahora</span>
+                    <span class="hidden md:inline">{{ t.nav_cta }}</span>
                 </a>
             </div>
         </div>
@@ -142,7 +147,20 @@
     <!-- Hero -->
     <section class="relative pt-12 pb-20 px-4 max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
         <div data-aos="fade-right">
-            <div class="inline-block px-3 py-1 bg-cyan-950/60 border border-cyan-500/40 rounded-full text-cyan-400 text-xs font-semibold mb-4">
+            <!-- BADGE SIN EMOJI -->
+            <div class="inline-flex items-center gap-2 px-3 py-1 bg-cyan-950/60 border border-cyan-500/40 rounded-full text-cyan-400 text-xs font-semibold mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
+                    <rect x="9" y="9" width="6" height="6"></rect>
+                    <line x1="9" y1="1" x2="9" y2="4"></line>
+                    <line x1="15" y1="1" x2="15" y2="4"></line>
+                    <line x1="9" y1="20" x2="9" y2="23"></line>
+                    <line x1="15" y1="20" x2="15" y2="23"></line>
+                    <line x1="20" y1="9" x2="23" y2="9"></line>
+                    <line x1="20" y1="14" x2="23" y2="14"></line>
+                    <line x1="1" y1="9" x2="4" y2="9"></line>
+                    <line x1="1" y1="14" x2="4" y2="14"></line>
+                </svg>
                 {{ t.hero_badge }}
             </div>
             <h1 class="text-3xl md:text-5xl font-extrabold leading-tight text-white mb-6">
@@ -152,11 +170,17 @@
                 {{ t.hero_desc }}
             </p>
             <div class="flex flex-col sm:flex-row gap-4">
-                <a href="#contacto" class="btn-shimmer bg-cyan-500 text-slate-950 font-bold px-6 py-3.5 rounded-xl text-center text-sm hover:bg-cyan-400 focus-visible:ring-2 focus-visible:ring-cyan-300 transition-colors duration-300">
-                    Agendar Diagnóstico Gratis (20 min) →
+                <!-- BOTÓN PRIMARIO CON FLECHA SVG -->
+                <a href="#contacto" class="btn-shimmer inline-flex items-center gap-2 bg-cyan-500 text-slate-950 font-bold px-6 py-3.5 rounded-xl text-center text-sm hover:bg-cyan-400 focus-visible:ring-2 focus-visible:ring-cyan-300 transition-colors duration-300">
+                    {{ t.hero_cta_1 }}
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
                 </a>
+                <!-- BOTÓN SECUNDARIO -->
                 <a href="#casos" class="border border-slate-700 hover:border-cyan-500 text-slate-300 font-semibold px-6 py-3.5 rounded-xl text-center text-sm transition focus-visible:ring-2 focus-visible:ring-cyan-300">
-                    Ver Caso: 190k Contratos en 3 Min
+                    {{ t.hero_cta_2 }}
                 </a>
             </div>
         </div>
@@ -175,7 +199,7 @@
                             {{ t.active_agent }}
                         </p>
                     </div>
-                    <span class="text-[10px] font-semibold bg-cyan-950 text-cyan-300 px-3 py-1.5 rounded-md border border-cyan-500/30 shadow-[0_0_10px_rgba(6,182,212,0.2)]">Python + Groq</span>
+                    <span class="text-[10px] font-semibold bg-cyan-950 text-cyan-300 px-3 py-1.5 rounded-md border border-cyan-500/30 shadow-[0_0_10px_rgba(6,182,212,0.2)]">DuckDB + Groq</span>
                 </div>
             </div>
         </div>
@@ -190,88 +214,6 @@
             <div><p class="text-2xl md:text-3xl font-extrabold text-white">{{ t.stat_4_title }}</p><p class="text-xs text-slate-300 mt-1">{{ t.stat_4_desc }}</p></div>
         </div>
     </section>
-
-    <!-- SECCIÓN: EL DOLOR -->
-<section class="py-20 px-4 bg-[#05070B]">
-    <div class="max-w-4xl mx-auto">
-        <div class="text-center mb-12" data-aos="fade-up">
-            <h2 class="text-xs font-bold text-cyan-400 tracking-wider uppercase mb-3">¿Te suena familiar?</h2>
-            <h3 class="text-2xl md:text-4xl font-extrabold text-white">
-                Tu negocio está <span class="text-cyan-400">perdiendo dinero</span> cada día
-            </h3>
-        </div>
-        
-        <div class="grid md:grid-cols-2 gap-6">
-            <!-- Dolor 1: Leads que se enfrían (Bellai Flow) -->
-            <div class="pain-item" data-aos="fade-right" data-aos-delay="100">
-                <div class="pain-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00e5ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <polyline points="12 6 12 12 16 14"></polyline>
-                    </svg>
-                </div>
-                <div>
-                    <h4 class="text-base font-bold text-white mb-1">Leads que se enfrían</h4>
-                    <p class="text-xs text-slate-400">El 78% de los clientes compra al primero que responde. Si tardas más de 5 minutos, ya perdiste la venta.</p>
-                </div>
-            </div>
-            
-            <!-- Dolor 2: Información atrapada (Bellai Core - RAG) -->
-            <div class="pain-item" data-aos="fade-left" data-aos-delay="200">
-                <div class="pain-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00e5ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                        <polyline points="14 2 14 8 20 8"></polyline>
-                        <line x1="16" y1="13" x2="8" y2="13"></line>
-                        <line x1="16" y1="17" x2="8" y2="17"></line>
-                        <polyline points="10 9 9 9 8 9"></polyline>
-                    </svg>
-                </div>
-                <div>
-                    <h4 class="text-base font-bold text-white mb-1">Información atrapada en documentos</h4>
-                    <p class="text-xs text-slate-400">Tienes miles de PDFs y documentos internos, pero encontrar una respuesta específica toma horas. Tu conocimiento está ahí, pero no puedes acceder a él.</p>
-                </div>
-            </div>
-            
-            <!-- Dolor 3: Decisiones sin datos (Bellai Guard - Analítica) -->
-            <div class="pain-item" data-aos="fade-right" data-aos-delay="300">
-                <div class="pain-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00e5ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="18" y1="20" x2="18" y2="10"></line>
-                        <line x1="12" y1="20" x2="12" y2="4"></line>
-                        <line x1="6" y1="20" x2="6" y2="14"></line>
-                    </svg>
-                </div>
-                <div>
-                    <h4 class="text-base font-bold text-white mb-1">Decisiones sin datos verificables</h4>
-                    <p class="text-xs text-slate-400">Tomas decisiones financieras o comerciales basadas en intuición porque no puedes cruzar tus bases de datos en tiempo real. Lo que no se mide, no se puede mejorar.</p>
-                </div>
-            </div>
-            
-            <!-- Dolor 4: Web que no convierte (Bellai Web) -->
-            <div class="pain-item" data-aos="fade-left" data-aos-delay="400">
-                <div class="pain-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00e5ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                        <line x1="8" y1="21" x2="16" y2="21"></line>
-                        <line x1="12" y1="17" x2="12" y2="21"></line>
-                    </svg>
-                </div>
-                <div>
-                    <h4 class="text-base font-bold text-white mb-1">Presencia digital que no convierte</h4>
-                    <p class="text-xs text-slate-400">Tu web tarda más de 3 segundos en cargar, no está optimizada para móvil o no guía al visitante hacia una acción. Cada segundo de demora = dinero perdido.</p>
-                </div>
-            </div>
-        </div>
-        
-        <div class="text-center mt-12" data-aos="fade-up">
-            <p class="text-sm text-slate-300 mb-6">Si te identificaste con al menos uno, <span class="text-cyan-400 font-bold">sigue leyendo</span>. La solución está abajo 👇</p>
-            <a href="#servicios" class="btn-shimmer inline-block bg-cyan-500 text-slate-950 font-bold px-8 py-3 rounded-xl text-sm hover:bg-cyan-400 transition-all duration-300 hover:scale-105">
-                Ver la solución →
-            </a>
-        </div>
-    </div>
-</section>
 
     <!-- Casos -->
     <section id="casos" class="py-20 px-4 max-w-6xl mx-auto">
@@ -319,6 +261,92 @@
         </div>
     </section>
 
+    <!-- SECCIÓN: EL DOLOR (CON SVGs, SIN EMOJIS) -->
+    <section class="py-20 px-4 bg-[#05070B]">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-xs font-bold text-cyan-400 tracking-wider uppercase mb-3">¿Te suena familiar?</h2>
+                <h3 class="text-2xl md:text-4xl font-extrabold text-white">
+                    Tu negocio está <span class="text-cyan-400">perdiendo dinero</span> cada día
+                </h3>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Dolor 1: Leads que se enfrían -->
+                <div class="pain-item" data-aos="fade-right" data-aos-delay="100">
+                    <div class="pain-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00e5ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 class="text-base font-bold text-white mb-1">Leads que se enfrían</h4>
+                        <p class="text-xs text-slate-400">El 78% de los clientes compra al primero que responde. Si tardas más de 5 minutos, ya perdiste la venta.</p>
+                    </div>
+                </div>
+                
+                <!-- Dolor 2: Información atrapada -->
+                <div class="pain-item" data-aos="fade-left" data-aos-delay="200">
+                    <div class="pain-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00e5ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                            <polyline points="10 9 9 9 8 9"></polyline>
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 class="text-base font-bold text-white mb-1">Información atrapada en documentos</h4>
+                        <p class="text-xs text-slate-400">Tienes miles de PDFs y documentos internos, pero encontrar una respuesta específica toma horas. Tu conocimiento está ahí, pero no puedes acceder a él.</p>
+                    </div>
+                </div>
+                
+                <!-- Dolor 3: Decisiones sin datos -->
+                <div class="pain-item" data-aos="fade-right" data-aos-delay="300">
+                    <div class="pain-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00e5ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="20" x2="18" y2="10"></line>
+                            <line x1="12" y1="20" x2="12" y2="4"></line>
+                            <line x1="6" y1="20" x2="6" y2="14"></line>
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 class="text-base font-bold text-white mb-1">Decisiones sin datos verificables</h4>
+                        <p class="text-xs text-slate-400">Tomas decisiones financieras o comerciales basadas en intuición porque no puedes cruzar tus bases de datos en tiempo real. Lo que no se mide, no se puede mejorar.</p>
+                    </div>
+                </div>
+                
+                <!-- Dolor 4: Web que no convierte -->
+                <div class="pain-item" data-aos="fade-left" data-aos-delay="400">
+                    <div class="pain-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00e5ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 class="text-base font-bold text-white mb-1">Presencia digital que no convierte</h4>
+                        <p class="text-xs text-slate-400">Tu web tarda más de 3 segundos en cargar, no está optimizada para móvil o no guía al visitante hacia una acción. Cada segundo de demora = dinero perdido.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12" data-aos="fade-up">
+                <p class="text-sm text-slate-300 mb-6">Si te identificaste con al menos uno, <span class="text-cyan-400 font-bold">sigue leyendo</span>. La solución está abajo</p>
+                <a href="#servicios" class="btn-shimmer inline-flex items-center gap-2 bg-cyan-500 text-slate-950 font-bold px-8 py-3 rounded-xl text-sm hover:bg-cyan-400 transition-all duration-300 hover:scale-105">
+                    Ver la solución
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- Servicios -->
     <section id="servicios" class="py-20 bg-[#0D111A]/30 px-4">
         <div class="max-w-6xl mx-auto">
@@ -328,7 +356,7 @@
             </div>
             <div class="grid md:grid-cols-3 gap-8">
                 
-                <!-- Servicio 1: Bellai Web & Captación -->
+                <!-- Servicio 1 -->
                 <div class="service-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="service-icon-wrapper">
                         <span class="service-number">01</span>
@@ -338,7 +366,7 @@
                             <line x1="12" y1="17" x2="12" y2="21"></line>
                         </svg>
                     </div>
-                    <h4 class="text-xl font-bold text-white mb-2">Bellai Web & Captación</h4>
+                    <h4 class="text-xl font-bold text-white mb-2">{{ t.service_1_title }}</h4>
                     <p class="text-xs text-cyan-400 font-bold mb-3">Fundación Digital de Alta Conversión</p>
                     <p class="text-xs text-slate-400 mb-4 italic">Ideal para: Empresas, clínicas, constructoras y firmas que necesitan proyectar autoridad inmediata.</p>
                     <ul class="text-xs text-slate-300 space-y-2">
@@ -351,7 +379,7 @@
                     </div>
                 </div>
 
-                <!-- Servicio 2: Bellai Flow -->
+                <!-- Servicio 2 -->
                 <div class="service-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="service-icon-wrapper">
                         <span class="service-number">02</span>
@@ -360,7 +388,7 @@
                             <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
                         </svg>
                     </div>
-                    <h4 class="text-xl font-bold text-white mb-2">Bellai Flow</h4>
+                    <h4 class="text-xl font-bold text-white mb-2">{{ t.service_2_title }}</h4>
                     <p class="text-xs text-blue-400 font-bold mb-3">Embudos Comerciales y Operación Autónoma 24/7</p>
                     <p class="text-xs text-slate-400 mb-4 italic">Ideal para: Negocios con alto flujo de mensajes que necesitan calificar leads sin saturar a su equipo.</p>
                     <ul class="text-xs text-slate-300 space-y-2">
@@ -373,7 +401,7 @@
                     </div>
                 </div>
 
-                <!-- Servicio 3: Bellai Core & Guard -->
+                <!-- Servicio 3 -->
                 <div class="service-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="service-icon-wrapper">
                         <span class="service-number">03</span>
@@ -382,7 +410,7 @@
                             <path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z"></path>
                         </svg>
                     </div>
-                    <h4 class="text-xl font-bold text-white mb-2">Bellai Core & Guard</h4>
+                    <h4 class="text-xl font-bold text-white mb-2">{{ t.service_3_title }}</h4>
                     <p class="text-xs text-purple-400 font-bold mb-3">Inteligencia Documental y Analítica de Precisión Quirúrgica</p>
                     <p class="text-xs text-slate-400 mb-4 italic">Ideal para: Firmas jurídicas, clínicas, aseguradoras y empresas con alto volumen de documentos críticos.</p>
                     <ul class="text-xs text-slate-300 space-y-2">
@@ -441,7 +469,7 @@
         </div>
     </section>
 
-    <!-- Calculadora ROI -->
+    <!-- Calculadora ROI (CON NOTA DE TRANSPARENCIA) -->
     <section id="calculadora" class="py-16 px-4 max-w-4xl mx-auto text-center" data-aos="fade-up">
         <div class="bg-gradient-to-b from-[#0D111A] to-[#05070B] border-2 border-cyan-500/50 p-8 rounded-3xl relative overflow-hidden shadow-[0_0_35px_rgba(6,182,212,0.15),inset_0_0_15px_rgba(6,182,212,0.03)]">
             <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-90 shadow-[0_0_10px_rgba(34,211,238,1)]"></div>
@@ -465,7 +493,7 @@
         </div>
     </section>
 
-    <!-- FAQ -->
+    <!-- FAQ (ACTUALIZADAS) -->
     <section id="faq" class="py-20 px-4 max-w-4xl mx-auto" data-aos="fade-up">
         <div class="text-center mb-12">
             <h2 class="text-xs font-bold text-cyan-400 tracking-wider uppercase mb-2">{{ t.faq_subtitle }}</h2>
@@ -491,7 +519,7 @@
         </div>
     </section>
 
-    <!-- Formulario -->
+    <!-- Formulario (CON "LO QUE RECIBIRÁ") -->
     <section id="contacto" class="py-20 px-4 max-w-2xl mx-auto" data-aos="fade-up">
         <div class="bg-gradient-to-b from-[#0D111A] to-[#05070B] border-2 border-cyan-500/50 p-8 md:p-10 rounded-3xl relative overflow-hidden shadow-[0_0_35px_rgba(6,182,212,0.15),inset_0_0_15px_rgba(6,182,212,0.03)]">
             <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-90 shadow-[0_0_10px_rgba(34,211,238,1)]"></div>
@@ -500,7 +528,7 @@
                 <p class="text-xs text-slate-300 mt-1">{{ t.form_desc }}</p>
             </div>
             
-            <!-- LO QUE RECIBIRÁ (NUEVO) -->
+            <!-- LO QUE RECIBIRÁ TRAS AGENDAR -->
             <div class="mb-8 p-6 bg-[#05070B]/50 border border-cyan-500/20 rounded-xl" data-aos="fade-up">
                 <h4 class="text-sm font-bold text-cyan-400 mb-4 flex items-center gap-2">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00e5ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -563,9 +591,14 @@
                         {{ t.form_consent | safe }}
                     </label>
                 </div>
+                <!-- BOTÓN SIN EMOJI -->
                 <button type="submit" id="submitBtn"
-                    class="btn-shimmer w-full bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold p-3.5 rounded-xl text-sm transition focus-visible:ring-2 focus-visible:ring-cyan-300 disabled:opacity-60 disabled:cursor-not-allowed">
+                    class="btn-shimmer inline-flex items-center justify-center gap-2 w-full bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold p-3.5 rounded-xl text-sm transition focus-visible:ring-2 focus-visible:ring-cyan-300 disabled:opacity-60 disabled:cursor-not-allowed">
                     {{ t.form_btn }}
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
                 </button>
                 <p id="formStatus" role="status" aria-live="polite" class="text-xs text-center min-h-[1rem]"></p>
             </form>
