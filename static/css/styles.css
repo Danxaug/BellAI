@@ -2059,7 +2059,7 @@ body {
         padding: 10px 20px;
     }
 }
-/* ============================================
+/* /* ============================================
    🧠 FONDO DE RED NEURONAL ANIMADA (HERO)
    ============================================ */
 
@@ -2082,9 +2082,9 @@ body {
     width: 100%;
     height: 100%;
     background:
-        radial-gradient(ellipse 600px 400px at 20% 30%, rgba(6, 182, 212, 0.12) 0%, transparent 70%),
-        radial-gradient(ellipse 500px 350px at 80% 70%, rgba(34, 211, 238, 0.08) 0%, transparent 70%),
-        radial-gradient(ellipse 400px 300px at 50% 50%, rgba(14, 165, 233, 0.06) 0%, transparent 70%);
+        radial-gradient(ellipse 600px 400px at 20% 30%, rgba(6, 182, 212, 0.15) 0%, transparent 70%),
+        radial-gradient(ellipse 500px 350px at 80% 70%, rgba(34, 211, 238, 0.1) 0%, transparent 70%),
+        radial-gradient(ellipse 400px 300px at 50% 50%, rgba(14, 165, 233, 0.08) 0%, transparent 70%);
     animation: glow-pulse 8s ease-in-out infinite;
 }
 
@@ -2104,11 +2104,11 @@ body {
 
 .particle {
     position: absolute;
-    width: 3px;
-    height: 3px;
+    width: 4px;
+    height: 4px;
     background: #22d3ee;
     border-radius: 50%;
-    box-shadow: 0 0 6px rgba(34, 211, 238, 0.8);
+    box-shadow: 0 0 8px rgba(34, 211, 238, 1);
     opacity: 0;
 }
 
@@ -2127,9 +2127,9 @@ body {
 
 @keyframes float {
     0% { transform: translate(0, 0); opacity: 0; }
-    10% { opacity: 0.8; }
+    10% { opacity: 0.9; }
     50% { transform: translate(30px, -40px); opacity: 1; }
-    90% { opacity: 0.8; }
+    90% { opacity: 0.9; }
     100% { transform: translate(60px, 20px); opacity: 0; }
 }
 
@@ -2140,16 +2140,17 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0.4;
+    opacity: 0.6;
 }
 
 .neural-lines line {
-    stroke: #06b6d4;
-    stroke-width: 0.5;
+    stroke: #22d3ee;
+    stroke-width: 1.2;
     fill: none;
     stroke-dasharray: 500;
     stroke-dashoffset: 500;
     animation: draw-line 4s ease-in-out infinite;
+    filter: drop-shadow(0 0 3px rgba(34, 211, 238, 0.7));
 }
 
 .neural-lines line:nth-child(1) { animation-delay: 0s; }
@@ -2173,15 +2174,16 @@ body {
 
 @keyframes draw-line {
     0% { stroke-dashoffset: 500; opacity: 0; }
-    20% { opacity: 0.6; }
-    50% { stroke-dashoffset: 0; opacity: 0.6; }
-    80% { opacity: 0; }
+    20% { opacity: 0.8; }
+    50% { stroke-dashoffset: 0; opacity: 1; }
+    80% { opacity: 0.3; }
     100% { stroke-dashoffset: -500; opacity: 0; }
 }
 
 .neural-nodes circle {
     fill: #22d3ee;
     opacity: 0;
+    filter: drop-shadow(0 0 6px rgba(34, 211, 238, 1));
     animation: node-pulse 4s ease-in-out infinite;
 }
 
@@ -2198,8 +2200,8 @@ body {
 .neural-nodes circle:nth-child(11) { animation-delay: 4s; }
 
 @keyframes node-pulse {
-    0%, 100% { opacity: 0; r: 3; }
-    50% { opacity: 0.9; r: 6; }
+    0%, 100% { opacity: 0; r: 4; }
+    50% { opacity: 1; r: 10; }
 }
 
 /* Asegurar que el contenido del hero quede por encima */
@@ -2211,10 +2213,13 @@ body {
 /* Optimización móvil: reducir partículas */
 @media (max-width: 768px) {
     .neural-network-svg {
-        opacity: 0.2;
+        opacity: 0.3;
     }
     .particle {
         width: 2px;
         height: 2px;
+    }
+    .neural-nodes circle {
+        filter: drop-shadow(0 0 3px rgba(34, 211, 238, 0.6));
     }
 }
