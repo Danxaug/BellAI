@@ -26,7 +26,7 @@ class Settings(BaseSettings):
     GROQ_TIMEOUT: int = 30
 
     # DB
-    DATABASE_URL: str = "sqlite+aiosqlite:///./bellia.db"
+    DATABASE_URL: str = "sqlite+aiosqlite:////tmp/bellia.db"
 
     # Redis
     REDIS_URL: str = "redis://localhost:6379/0"
