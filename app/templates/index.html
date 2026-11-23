@@ -33,7 +33,7 @@
     <link rel="manifest" href="/static/manifest.json">
 
     <!-- CSS local -->
-    <link rel="stylesheet" href="/static/css/styles.css?v=8">
+    <link rel="stylesheet" href="/static/css/styles.css?v=9">
     <link rel="stylesheet" href="/static/css/aos.css">
 
     <!-- Schema.org JSON-LD -->
@@ -113,7 +113,7 @@
                     <a href="/en" title="English" class="flag-btn {% if lang == 'en' %}active{% endif %}">EN</a>
                 </div>
                 
-                <!-- BOTÓN AGENDAR CON BRILLO (Nuevo número) -->
+                <!-- BOTÓN AGENDAR CON BRILLO -->
                 <a href="https://api.whatsapp.com/send?phone=573174827958&text=Hola%20Bellai,%20quiero%20agendar%20mi%20diagn%C3%B3stico%20gratuito"
                    target="_blank" rel="noopener noreferrer"
                    class="btn-agendar-shimmer">
@@ -494,6 +494,268 @@
                     <div class="flex flex-col items-center gap-3"><img src="/static/img/tech/github.svg" alt="GitHub" class="h-12 w-auto filter invert"><span class="text-xs text-slate-400 font-semibold">GitHub</span></div>
                     <div class="flex flex-col items-center gap-3"><img src="/static/img/tech/render.svg" alt="Render" class="h-12 w-auto filter invert"><span class="text-xs text-slate-400 font-semibold">Render</span></div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NUEVA SECCIÓN: TESTIMONIOS / RESULTADOS VALIDADOS (CARRUSEL) -->
+    <section id="testimonios" class="py-20 bg-[#05070B] overflow-hidden border-y border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 text-center mb-12" data-aos="fade-up">
+            <h2 class="text-xs font-bold text-cyan-400 tracking-wider uppercase mb-2">Resultados Validados</h2>
+            <h3 class="text-2xl md:text-4xl font-extrabold text-white">Lo que logran nuestros socios</h3>
+            <p class="text-sm text-slate-400 mt-2 max-w-2xl mx-auto">Empresas que transformaron su operación con BellAI.</p>
+        </div>
+
+        <div class="relative w-full max-w-6xl mx-auto overflow-hidden group">
+            <!-- Sombras laterales para efecto de profundidad -->
+            <div class="absolute top-0 left-0 w-24 h-full bg-gradient-to-r from-[#05070B] to-transparent z-10 pointer-events-none"></div>
+            <div class="absolute top-0 right-0 w-24 h-full bg-gradient-to-l from-[#05070B] to-transparent z-10 pointer-events-none"></div>
+
+            <!-- Pista del Carrusel -->
+            <div class="flex w-max animate-marquee-slow group-hover:[animation-play-state:paused]">
+                
+                <!-- TARJETA 1 -->
+                <div class="flex items-stretch gap-6 px-4">
+                    <div class="w-[320px] flex-shrink-0 bg-[#0D111A] border border-slate-800 rounded-2xl p-6 relative hover:border-cyan-500/50 transition-colors duration-300 shadow-lg">
+                        <div class="flex items-center gap-2 mb-4">
+                            <img src="https://www.gstatic.com/images/branding/product/2x/google_logo_48dp.png" alt="Google" class="h-5 w-5 opacity-80">
+                            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Reseña Verificada</span>
+                        </div>
+                        <div class="flex gap-1 mb-3 text-yellow-400">
+                            ★★★★★
+                        </div>
+                        <p class="text-xs text-slate-300 leading-relaxed mb-4 italic">"Implementamos BellAI Core y nuestro tiempo de respuesta bajó de 2 horas a 15 segundos. La recuperación de leads fue inmediata."</p>
+                        <div class="flex items-center gap-3 mt-auto">
+                            <img src="https://ui-avatars.com/api/?name=Carlos+M&background=00E5FF&color=fff" alt="Avatar" class="w-10 h-10 rounded-full">
+                            <div>
+                                <p class="text-xs font-bold text-white">Carlos Méndez</p>
+                                <p class="text-[10px] text-slate-500">CEO, Logística Express</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TARJETA 2 -->
+                <div class="flex items-stretch gap-6 px-4">
+                    <div class="w-[320px] flex-shrink-0 bg-[#0D111A] border border-slate-800 rounded-2xl p-6 relative hover:border-cyan-500/50 transition-colors duration-300 shadow-lg">
+                        <div class="flex items-center gap-2 mb-4">
+                            <img src="https://www.gstatic.com/images/branding/product/2x/google_logo_48dp.png" alt="Google" class="h-5 w-5 opacity-80">
+                            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Reseña Verificada</span>
+                        </div>
+                        <div class="flex gap-1 mb-3 text-yellow-400">
+                            ★★★★★
+                        </div>
+                        <p class="text-xs text-slate-300 leading-relaxed mb-4 italic">"BellAI Guard auditó 500 contratos en minutos. Lo que nos tomaba días ahora es instantáneo. Precisión quirúrgica."</p>
+                        <div class="flex items-center gap-3 mt-auto">
+                            <img src="https://ui-avatars.com/api/?name=Ana+R&background=22d3ee&color=fff" alt="Avatar" class="w-10 h-10 rounded-full">
+                            <div>
+                                <p class="text-xs font-bold text-white">Ana Rodríguez</p>
+                                <p class="text-[10px] text-slate-500">Directora Legal, Grupo Inmobiliario</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TARJETA 3 -->
+                <div class="flex items-stretch gap-6 px-4">
+                    <div class="w-[320px] flex-shrink-0 bg-[#0D111A] border border-slate-800 rounded-2xl p-6 relative hover:border-cyan-500/50 transition-colors duration-300 shadow-lg">
+                        <div class="flex items-center gap-2 mb-4">
+                            <img src="https://www.gstatic.com/images/branding/product/2x/google_logo_48dp.png" alt="Google" class="h-5 w-5 opacity-80">
+                            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Reseña Verificada</span>
+                        </div>
+                        <div class="flex gap-1 mb-3 text-yellow-400">
+                            ★★★★★
+                        </div>
+                        <p class="text-xs text-slate-300 leading-relaxed mb-4 italic">"La web que construyeron no es bonita, es una máquina. El ROI se vio desde la primera semana con el embudo automatizado."</p>
+                        <div class="flex items-center gap-3 mt-auto">
+                            <img src="https://ui-avatars.com/api/?name=Jorge+L&background=0ea5e9&color=fff" alt="Avatar" class="w-10 h-10 rounded-full">
+                            <div>
+                                <p class="text-xs font-bold text-white">Jorge López</p>
+                                <p class="text-[10px] text-slate-500">Fundador, Clínica Dental Pro</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TARJETA 4 -->
+                <div class="flex items-stretch gap-6 px-4">
+                    <div class="w-[320px] flex-shrink-0 bg-[#0D111A] border border-slate-800 rounded-2xl p-6 relative hover:border-cyan-500/50 transition-colors duration-300 shadow-lg">
+                        <div class="flex items-center gap-2 mb-4">
+                            <img src="https://www.gstatic.com/images/branding/product/2x/google_logo_48dp.png" alt="Google" class="h-5 w-5 opacity-80">
+                            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Reseña Verificada</span>
+                        </div>
+                        <div class="flex gap-1 mb-3 text-yellow-400">
+                            ★★★★★
+                        </div>
+                        <p class="text-xs text-slate-300 leading-relaxed mb-4 italic">"El chatbot de IA cierra ventas mientras dormimos. Hemos duplicado nuestra capacidad de atención sin contratar más personal."</p>
+                        <div class="flex items-center gap-3 mt-auto">
+                            <img src="https://ui-avatars.com/api/?name=Sofia+G&background=06b6d4&color=fff" alt="Avatar" class="w-10 h-10 rounded-full">
+                            <div>
+                                <p class="text-xs font-bold text-white">Sofía Gómez</p>
+                                <p class="text-[10px] text-slate-500">Gerente Ventas, E-commerce Moda</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TARJETA 5 -->
+                <div class="flex items-stretch gap-6 px-4">
+                    <div class="w-[320px] flex-shrink-0 bg-[#0D111A] border border-slate-800 rounded-2xl p-6 relative hover:border-cyan-500/50 transition-colors duration-300 shadow-lg">
+                        <div class="flex items-center gap-2 mb-4">
+                            <img src="https://www.gstatic.com/images/branding/product/2x/google_logo_48dp.png" alt="Google" class="h-5 w-5 opacity-80">
+                            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Reseña Verificada</span>
+                        </div>
+                        <div class="flex gap-1 mb-3 text-yellow-400">
+                            ★★★★★
+                        </div>
+                        <p class="text-xs text-slate-300 leading-relaxed mb-4 italic">"Profesionalismo técnico nivel Silicon Valley pero con trato cercano. La implementación fue rápida y sin dolores de cabeza."</p>
+                        <div class="flex items-center gap-3 mt-auto">
+                            <img src="https://ui-avatars.com/api/?name=Miguel+T&background=0891b2&color=fff" alt="Avatar" class="w-10 h-10 rounded-full">
+                            <div>
+                                <p class="text-xs font-bold text-white">Miguel Torres</p>
+                                <p class="text-[10px] text-slate-500">CTO, FinTech Solutions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TARJETA 6 -->
+                <div class="flex items-stretch gap-6 px-4">
+                    <div class="w-[320px] flex-shrink-0 bg-[#0D111A] border border-slate-800 rounded-2xl p-6 relative hover:border-cyan-500/50 transition-colors duration-300 shadow-lg">
+                        <div class="flex items-center gap-2 mb-4">
+                            <img src="https://www.gstatic.com/images/branding/product/2x/google_logo_48dp.png" alt="Google" class="h-5 w-5 opacity-80">
+                            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Reseña Verificada</span>
+                        </div>
+                        <div class="flex gap-1 mb-3 text-yellow-400">
+                            ★★★★★
+                        </div>
+                        <p class="text-xs text-slate-300 leading-relaxed mb-4 italic">"La auditoría documental con IA nos ahorró miles de horas hombre. Ahora podemos enfocarnos en estrategia, no en buscar papeles."</p>
+                        <div class="flex items-center gap-3 mt-auto">
+                            <img src="https://ui-avatars.com/api/?name=Laura+P&background=0284c7&color=fff" alt="Avatar" class="w-10 h-10 rounded-full">
+                            <div>
+                                <p class="text-xs font-bold text-white">Laura Pérez</p>
+                                <p class="text-[10px] text-slate-500">Directora Operaciones, Constructora Andina</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DUPLICAR TARJETAS PARA EFECTO INFINITO (Copias exactas de las anteriores) -->
+                 <div class="flex items-stretch gap-6 px-4">
+                    <div class="w-[320px] flex-shrink-0 bg-[#0D111A] border border-slate-800 rounded-2xl p-6 relative hover:border-cyan-500/50 transition-colors duration-300 shadow-lg">
+                        <div class="flex items-center gap-2 mb-4">
+                            <img src="https://www.gstatic.com/images/branding/product/2x/google_logo_48dp.png" alt="Google" class="h-5 w-5 opacity-80">
+                            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Reseña Verificada</span>
+                        </div>
+                        <div class="flex gap-1 mb-3 text-yellow-400">
+                            ★★★★★
+                        </div>
+                        <p class="text-xs text-slate-300 leading-relaxed mb-4 italic">"Implementamos BellAI Core y nuestro tiempo de respuesta bajó de 2 horas a 15 segundos. La recuperación de leads fue inmediata."</p>
+                        <div class="flex items-center gap-3 mt-auto">
+                            <img src="https://ui-avatars.com/api/?name=Carlos+M&background=00E5FF&color=fff" alt="Avatar" class="w-10 h-10 rounded-full">
+                            <div>
+                                <p class="text-xs font-bold text-white">Carlos Méndez</p>
+                                <p class="text-[10px] text-slate-500">CEO, Logística Express</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex items-stretch gap-6 px-4">
+                    <div class="w-[320px] flex-shrink-0 bg-[#0D111A] border border-slate-800 rounded-2xl p-6 relative hover:border-cyan-500/50 transition-colors duration-300 shadow-lg">
+                        <div class="flex items-center gap-2 mb-4">
+                            <img src="https://www.gstatic.com/images/branding/product/2x/google_logo_48dp.png" alt="Google" class="h-5 w-5 opacity-80">
+                            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Reseña Verificada</span>
+                        </div>
+                        <div class="flex gap-1 mb-3 text-yellow-400">
+                            ★★★★★
+                        </div>
+                        <p class="text-xs text-slate-300 leading-relaxed mb-4 italic">"BellAI Guard auditó 500 contratos en minutos. Lo que nos tomaba días ahora es instantáneo. Precisión quirúrgica."</p>
+                        <div class="flex items-center gap-3 mt-auto">
+                            <img src="https://ui-avatars.com/api/?name=Ana+R&background=22d3ee&color=fff" alt="Avatar" class="w-10 h-10 rounded-full">
+                            <div>
+                                <p class="text-xs font-bold text-white">Ana Rodríguez</p>
+                                <p class="text-[10px] text-slate-500">Directora Legal, Grupo Inmobiliario</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex items-stretch gap-6 px-4">
+                    <div class="w-[320px] flex-shrink-0 bg-[#0D111A] border border-slate-800 rounded-2xl p-6 relative hover:border-cyan-500/50 transition-colors duration-300 shadow-lg">
+                        <div class="flex items-center gap-2 mb-4">
+                            <img src="https://www.gstatic.com/images/branding/product/2x/google_logo_48dp.png" alt="Google" class="h-5 w-5 opacity-80">
+                            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Reseña Verificada</span>
+                        </div>
+                        <div class="flex gap-1 mb-3 text-yellow-400">
+                            ★★★★★
+                        </div>
+                        <p class="text-xs text-slate-300 leading-relaxed mb-4 italic">"La web que construyeron no es bonita, es una máquina. El ROI se vio desde la primera semana con el embudo automatizado."</p>
+                        <div class="flex items-center gap-3 mt-auto">
+                            <img src="https://ui-avatars.com/api/?name=Jorge+L&background=0ea5e9&color=fff" alt="Avatar" class="w-10 h-10 rounded-full">
+                            <div>
+                                <p class="text-xs font-bold text-white">Jorge López</p>
+                                <p class="text-[10px] text-slate-500">Fundador, Clínica Dental Pro</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex items-stretch gap-6 px-4">
+                    <div class="w-[320px] flex-shrink-0 bg-[#0D111A] border border-slate-800 rounded-2xl p-6 relative hover:border-cyan-500/50 transition-colors duration-300 shadow-lg">
+                        <div class="flex items-center gap-2 mb-4">
+                            <img src="https://www.gstatic.com/images/branding/product/2x/google_logo_48dp.png" alt="Google" class="h-5 w-5 opacity-80">
+                            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Reseña Verificada</span>
+                        </div>
+                        <div class="flex gap-1 mb-3 text-yellow-400">
+                            ★★★★★
+                        </div>
+                        <p class="text-xs text-slate-300 leading-relaxed mb-4 italic">"El chatbot de IA cierra ventas mientras dormimos. Hemos duplicado nuestra capacidad de atención sin contratar más personal."</p>
+                        <div class="flex items-center gap-3 mt-auto">
+                            <img src="https://ui-avatars.com/api/?name=Sofia+G&background=06b6d4&color=fff" alt="Avatar" class="w-10 h-10 rounded-full">
+                            <div>
+                                <p class="text-xs font-bold text-white">Sofía Gómez</p>
+                                <p class="text-[10px] text-slate-500">Gerente Ventas, E-commerce Moda</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex items-stretch gap-6 px-4">
+                    <div class="w-[320px] flex-shrink-0 bg-[#0D111A] border border-slate-800 rounded-2xl p-6 relative hover:border-cyan-500/50 transition-colors duration-300 shadow-lg">
+                        <div class="flex items-center gap-2 mb-4">
+                            <img src="https://www.gstatic.com/images/branding/product/2x/google_logo_48dp.png" alt="Google" class="h-5 w-5 opacity-80">
+                            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Reseña Verificada</span>
+                        </div>
+                        <div class="flex gap-1 mb-3 text-yellow-400">
+                            ★★★★★
+                        </div>
+                        <p class="text-xs text-slate-300 leading-relaxed mb-4 italic">"Profesionalismo técnico nivel Silicon Valley pero con trato cercano. La implementación fue rápida y sin dolores de cabeza."</p>
+                        <div class="flex items-center gap-3 mt-auto">
+                            <img src="https://ui-avatars.com/api/?name=Miguel+T&background=0891b2&color=fff" alt="Avatar" class="w-10 h-10 rounded-full">
+                            <div>
+                                <p class="text-xs font-bold text-white">Miguel Torres</p>
+                                <p class="text-[10px] text-slate-500">CTO, FinTech Solutions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex items-stretch gap-6 px-4">
+                    <div class="w-[320px] flex-shrink-0 bg-[#0D111A] border border-slate-800 rounded-2xl p-6 relative hover:border-cyan-500/50 transition-colors duration-300 shadow-lg">
+                        <div class="flex items-center gap-2 mb-4">
+                            <img src="https://www.gstatic.com/images/branding/product/2x/google_logo_48dp.png" alt="Google" class="h-5 w-5 opacity-80">
+                            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Reseña Verificada</span>
+                        </div>
+                        <div class="flex gap-1 mb-3 text-yellow-400">
+                            ★★★★★
+                        </div>
+                        <p class="text-xs text-slate-300 leading-relaxed mb-4 italic">"La auditoría documental con IA nos ahorró miles de horas hombre. Ahora podemos enfocarnos en estrategia, no en buscar papeles."</p>
+                        <div class="flex items-center gap-3 mt-auto">
+                            <img src="https://ui-avatars.com/api/?name=Laura+P&background=0284c7&color=fff" alt="Avatar" class="w-10 h-10 rounded-full">
+                            <div>
+                                <p class="text-xs font-bold text-white">Laura Pérez</p>
+                                <p class="text-[10px] text-slate-500">Directora Operaciones, Constructora Andina</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
