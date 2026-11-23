@@ -2218,3 +2218,13 @@ body {
         height: 2px;
     }
 }
+/* --- AGREGADO MANUAL PARA CARRUSEL DE TESTIMONIOS --- */
+@keyframes marquee-slow {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.animate-marquee-slow {
+    animation: marquee-slow 60s linear infinite;
+    -webkit-animation: marquee-slow 60s linear infinite;
+}
