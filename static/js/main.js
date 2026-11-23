@@ -23,18 +23,80 @@ document.addEventListener("DOMContentLoaded", () => {
         ticketIn.addEventListener("input", calcROI);
     }
 
-    // 3. Formulario de Lead (WhatsApp)
+    // 3. Formulario de Lead (WhatsApp Inteligente - NUEVO NÚMERO Y LÓGICA)
     const form = document.getElementById("leadForm");
+    const servicioSelect = document.getElementById("servicio"); 
+    
     if (form) {
         form.addEventListener("submit", async (e) => {
             e.preventDefault();
+            
+            const submitBtn = document.getElementById("submitBtn");
+            const formStatus = document.getElementById("formStatus");
+            
+            // Feedback visual de carga
+            if(submitBtn) {
+                submitBtn.disabled = true;
+                const originalText = submitBtn.innerHTML;
+                submitBtn.dataset.originalHtml = originalText; // Guardamos el HTML original
+                submitBtn.innerHTML = `<span>Enviando...</span>`;
+            }
+            if(formStatus) formStatus.textContent = "";
+
             const fd = new FormData(form);
-            const body = { nombre: fd.get("nombre"), empresa: fd.get("empresa") || "", whatsapp: fd.get("whatsapp"), servicio: "General" };
+            
+            // 🔥 AQUÍ ESTÁ LA MAGIA: Leemos el servicio seleccionado realmente
+            const servicioElegido = servicioSelect ? servicioSelect.value : "BellAI Flow"; 
+
+            const body = { 
+                nombre: fd.get("nombre"), 
+                empresa: fd.get("empresa") || "", 
+                whatsapp: fd.get("whatsapp"), 
+                servicio: servicioElegido // Enviamos el valor real (ej: "Bellai Core")
+            };
+
             try {
-                const res = await fetch("/procesar_lead", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
+                // Enviamos a tu backend para que procese el lead y genere el link correcto
+                const res = await fetch("/procesar_lead", { 
+                    method: "POST", 
+                    headers: { "Content-Type": "application/json" }, 
+                    body: JSON.stringify(body) 
+                });
+
+                if (!res.ok) throw new Error("Error en el servidor");
+
                 const data = await res.json();
-                if(data.redirect_url) window.location.href = data.redirect_url;
-            } catch (err) { alert("Error al enviar. Intenta de nuevo."); }
+
+                // Si el backend devuelve una URL de redirección (WhatsApp), vamos allá
+                if (data.redirect_url) {
+                    window.location.href = data.redirect_url;
+                } else {
+                    // Fallback por si el backend no devuelve redirect_url inmediatamente
+                    if(formStatus) formStatus.textContent = "¡Gracias! Redirigiendo a WhatsApp...";
+                    
+                    // Construcción manual de emergencia solo si falla el backend (opcional)
+                    // NOTA: El número aquí es el nuevo: 573174827958
+                    const phone = "573174827958"; 
+                    const msg = encodeURIComponent(`Hola BellAI, quiero agendar mi diagnóstico gratuito para el servicio: ${servicioElegido}. Mi nombre es ${body.nombre}.`);
+                    
+                    setTimeout(() => {
+                         window.open(`https://api.whatsapp.com/send?phone=${phone}&text=${msg}`, '_blank');
+                         // Restaurar botón
+                         if(submitBtn && submitBtn.dataset.originalHtml) {
+                             submitBtn.disabled = false;
+                             submitBtn.innerHTML = submitBtn.dataset.originalHtml;
+                         }
+                    }, 1000);
+                }
+
+            } catch (err) {
+                console.error(err);
+                if(formStatus) formStatus.textContent = "️ Hubo un error al conectar. Por favor intenta de nuevo o escríbenos directo.";
+                if(submitBtn) {
+                    submitBtn.disabled = false;
+                    if(submitBtn.dataset.originalHtml) submitBtn.innerHTML = submitBtn.dataset.originalHtml;
+                }
+            }
         });
     }
 });

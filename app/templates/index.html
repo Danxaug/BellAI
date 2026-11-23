@@ -32,8 +32,8 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/static/favicon/apple-touch-icon.png">
     <link rel="manifest" href="/static/manifest.json">
 
-    <!-- CSS local (con ?v=7 para romper caché) -->
-    <link rel="stylesheet" href="/static/css/styles.css?v=7">
+    <!-- CSS local -->
+    <link rel="stylesheet" href="/static/css/styles.css?v=8">
     <link rel="stylesheet" href="/static/css/aos.css">
 
     <!-- Schema.org JSON-LD -->
@@ -113,8 +113,8 @@
                     <a href="/en" title="English" class="flag-btn {% if lang == 'en' %}active{% endif %}">EN</a>
                 </div>
                 
-                <!-- BOTÓN AGENDAR CON BRILLO -->
-                <a href="https://api.whatsapp.com/send?phone={{ whatsapp_phone }}&text=Hola%20Bellai,%20quiero%20agendar%20mi%20diagn%C3%B3stico%20gratuito"
+                <!-- BOTÓN AGENDAR CON BRILLO (Nuevo número) -->
+                <a href="https://api.whatsapp.com/send?phone=573174827958&text=Hola%20Bellai,%20quiero%20agendar%20mi%20diagn%C3%B3stico%20gratuito"
                    target="_blank" rel="noopener noreferrer"
                    class="btn-agendar-shimmer">
                     <span class="md:hidden">{{ t.nav_cta_mobile }}</span>
@@ -647,7 +647,7 @@
             </div>
             <div>
                 <p class="font-bold text-white mb-2">{{ t.footer_contact }}</p>
-                <a href="https://api.whatsapp.com/send?phone={{ whatsapp_phone }}" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400">WhatsApp</a>
+                <a href="https://api.whatsapp.com/send?phone=573174827958" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400">WhatsApp</a>
             </div>
         </div>
         <p class="text-center mt-8">{{ t.footer_rights }}</p>
