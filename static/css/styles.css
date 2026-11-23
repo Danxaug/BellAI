@@ -2228,8 +2228,8 @@ body {
     animation: marquee-slow 60s linear infinite;
     -webkit-animation: marquee-slow 60s linear infinite;
 }
-/* --- CORRECCIÓN: Logo de Google en testimonios --- */
-.google-logo-testimonial {
+/* --- CORRECCIÓN: Logo Google Testimonios --- */
+.google-logo-small {
     height: 20px !important;
     width: auto !important;
     display: block !important;
