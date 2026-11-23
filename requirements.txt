@@ -43,4 +43,3 @@ opentelemetry-instrumentation-fastapi==0.48b0
 opentelemetry-exporter-otlp==1.27.0
 
 # Serverless (Vercel)
-mangum==0.17.0
