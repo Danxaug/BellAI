@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ticketIn.addEventListener("input", calcROI);
     }
 
-    // 3. Formulario de Lead (WhatsApp Inteligente)
+    // 3. Formulario de Lead (WhatsApp Inteligente - CORREGIDO PARA PRODUCCIÓN)
     const form = document.getElementById("leadForm");
     const servicioSelect = document.getElementById("servicio"); 
     
@@ -34,6 +34,14 @@ document.addEventListener("DOMContentLoaded", () => {
             const submitBtn = document.getElementById("submitBtn");
             const formStatus = document.getElementById("formStatus");
             
+            // Datos del formulario
+            const fd = new FormData(form);
+            const nombre = fd.get("nombre");
+            const empresa = fd.get("empresa") || "";
+            const whatsappUser = fd.get("whatsapp");
+            const servicioElegido = servicioSelect ? servicioSelect.value : "BellAI Flow"; 
+
+            // Feedback visual
             if(submitBtn) {
                 submitBtn.disabled = true;
                 const originalText = submitBtn.innerHTML;
@@ -42,56 +50,55 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             if(formStatus) formStatus.textContent = "";
 
-            const fd = new FormData(form);
-            const servicioElegido = servicioSelect ? servicioSelect.value : "BellAI Flow"; 
-
-            const body = { 
-                nombre: fd.get("nombre"), 
-                empresa: fd.get("empresa") || "", 
-                whatsapp: fd.get("whatsapp"), 
-                servicio: servicioElegido 
-            };
+            // TU NÚMERO DE BELLAI (Asegurado con 57)
+            const YOUR_PHONE = "573174827958"; 
+            const msg = encodeURIComponent(`Hola BellAI, soy ${nombre} de ${empresa}. Quiero agendar mi diagnóstico gratuito para: ${servicioElegido}. Mi WhatsApp es ${whatsappUser}.`);
+            const directWhatsAppLink = `https://wa.me/${YOUR_PHONE}?text=${msg}`;
 
             try {
+                // Intentamos llamar al backend (solo si existe la ruta en producción)
                 const res = await fetch("/procesar_lead", { 
                     method: "POST", 
                     headers: { "Content-Type": "application/json" }, 
-                    body: JSON.stringify(body) 
+                    body: JSON.stringify({ nombre, empresa, whatsapp: whatsappUser, servicio: servicioElegido }) 
                 });
 
-                if (!res.ok) throw new Error("Error en el servidor");
-                const data = await res.json();
-
-                if (data.redirect_url) {
-                    window.location.href = data.redirect_url;
-                } else {
-                    if(formStatus) formStatus.textContent = "¡Gracias! Redirigiendo a WhatsApp...";
-                    const phone = "573174827958"; 
-                    const msg = encodeURIComponent(`Hola BellAI, quiero agendar mi diagnóstico gratuito para el servicio: ${servicioElegido}. Mi nombre es ${body.nombre}.`);
-                    
-                    setTimeout(() => {
-                         window.open(`https://wa.me/${phone}?text=${msg}`, '_blank');
-                         if(submitBtn && submitBtn.dataset.originalHtml) {
-                             submitBtn.disabled = false;
-                             submitBtn.innerHTML = submitBtn.dataset.originalHtml;
-                         }
-                    }, 1000);
+                // Si el backend responde OK y tiene una URL de redirección, la usamos
+                if (res.ok) {
+                    const data = await res.json();
+                    if (data.redirect_url) {
+                        window.location.href = data.redirect_url;
+                        return; // Salimos aquí si funcionó el backend
+                    }
                 }
+                
+                // SI LLEGAMOS AQUÍ: El backend no dio URL válida O dio error 404/500
+                // FALLBACK AUTOMÁTICO: Redirigir directo a WhatsApp
+                throw new Error("Backend no respondió correctamente, usando fallback directo.");
 
             } catch (err) {
-                console.error(err);
-                if(formStatus) formStatus.textContent = "⚠️ Hubo un error al conectar. Por favor intenta de nuevo o escríbenos directo.";
-                if(submitBtn) {
-                    submitBtn.disabled = false;
-                    if(submitBtn.dataset.originalHtml) submitBtn.innerHTML = submitBtn.dataset.originalHtml;
-                }
+                console.warn("Error en backend o fallback activado:", err);
+                
+                // Mensaje opcional al usuario
+                if(formStatus) formStatus.textContent = "️ Conectando directamente con WhatsApp...";
+                
+                // Abrir WhatsApp inmediatamente
+                setTimeout(() => {
+                     window.open(directWhatsAppLink, '_blank');
+                     
+                     // Restaurar botón
+                     if(submitBtn && submitBtn.dataset.originalHtml) {
+                         submitBtn.disabled = false;
+                         submitBtn.innerHTML = submitBtn.dataset.originalHtml;
+                     }
+                }, 800); // Pequeña pausa para que el usuario vea el mensaje
             }
         });
     }
 });
 
 // =========================================
-// WIDGET CHAT ASESOR IA (CORREGIDO)
+// WIDGET CHAT ASESOR IA
 // =========================================
 document.addEventListener('DOMContentLoaded', function() {
     const toggleBtn = document.getElementById('toggle-chat-btn');
@@ -161,21 +168,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 let responseText = data.response || 'Lo siento, no pude procesar tu mensaje.';
 
-                // 🔥 CORRECCIÓN CRÍTICA: Generación Automática de Link WhatsApp Seguro
-                // Detectamos si el usuario acaba de enviar un número de teléfono en su mensaje
+                //  Lógica de Botón WhatsApp en Chat
                 const phoneRegex = /(\+?\d{7,15})/; 
                 const userPhoneMatch = message.match(phoneRegex);
 
-                // Si el usuario envió un número O si la respuesta de la IA menciona "agendar" o "diagnóstico"
                 if (userPhoneMatch || (responseText.toLowerCase().includes('agendar') && responseText.toLowerCase().includes('whatsapp'))) {
                     let cleanPhone = "";
                     
-                    // Prioridad 1: Usar el número que el usuario acaba de escribir
                     if (userPhoneMatch) {
-                        cleanPhone = userPhoneMatch[0].replace(/\D/g, ''); // Limpiar símbolos
-                    } 
-                    // Prioridad 2: Si no hay número en el mensaje actual, buscar en el historial reciente
-                    else {
+                        cleanPhone = userPhoneMatch[0].replace(/\D/g, '');
+                    } else {
                         const lastUserMsg = [...chatHistory].reverse().find(m => m.role === 'user');
                         if (lastUserMsg) {
                             const histMatch = lastUserMsg.content.match(phoneRegex);
@@ -183,24 +185,21 @@ document.addEventListener('DOMContentLoaded', function() {
                         }
                     }
 
-                    // Si encontramos un número válido, generamos el link correcto manualmente
                     if (cleanPhone.length >= 7) {
                         if (!cleanPhone.startsWith('57')) {
                             cleanPhone = '57' + cleanPhone;
                         }
                         
                         const whatsappLink = `https://wa.me/${cleanPhone}?text=${encodeURIComponent('Hola BellAI, confirmo mi interés en el diagnóstico gratuito.')}`;
-                        
-                        // Agregamos un botón profesional al final de la respuesta
                         responseText += `<br><br>👉 <a href="${whatsappLink}" target="_blank" style="display: inline-block; background-color: #25D366; color: white; padding: 12px 20px; text-decoration: none; border-radius: 8px; font-weight: bold; font-family: sans-serif; margin-top: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);"> Abrir WhatsApp para Agendar</a>`;
                     }
                 }
 
-                botMsg.innerHTML = responseText; // Usamos innerHTML para renderizar el botón
+                botMsg.innerHTML = responseText;
                 chatMessages.appendChild(botMsg);
 
                 chatHistory.push({ role: 'user', content: message });
-                chatHistory.push({ role: 'assistant', content: data.response }); // Guardamos la respuesta original sin el botón extra
+                chatHistory.push({ role: 'assistant', content: data.response });
                 chatMessages.scrollTop = chatMessages.scrollHeight;
 
             } catch (error) {
@@ -208,7 +207,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 loader.remove();
                 const errorMsg = document.createElement('div');
                 errorMsg.className = 'msg-error';
-                errorMsg.textContent = '⚠️ Error de conexión. Intenta de nuevo.';
+                errorMsg.textContent = '⚠️ Error de conexión con la IA. Por favor escríbenos directo al WhatsApp.';
                 chatMessages.appendChild(errorMsg);
                 chatMessages.scrollTop = chatMessages.scrollHeight;
             }
