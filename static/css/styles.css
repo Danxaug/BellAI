@@ -2228,3 +2228,87 @@ body {
     animation: marquee-slow 60s linear infinite;
     -webkit-animation: marquee-slow 60s linear infinite;
 }
+/* ============================================
+   🚑 PARCHE DE SEGURIDAD RESPONSIVE (NO TOCAR LO ANTERIOR)
+   Soluciona cortes de botones en iPad/iPhone vertical
+   ============================================ */
+
+/* 1. Forzar adaptación de TODOS los botones y enlaces tipo botón */
+button, 
+.btn, 
+.btn-primary, 
+.btn-secondary, 
+.btn-agendar-shimmer, 
+a.button, 
+[class*="Solicitar"], 
+[class*="Agendar"], 
+[class*="Request"], 
+[class*="Book"] {
+    /* Permite que el texto baje de línea si no cabe */
+    white-space: normal !important; 
+    word-wrap: break-word !important;
+    
+    /* Asegura que no se salgan del contenedor */
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    
+    /* Mejora el toque en móviles */
+    min-height: 44px; 
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* 2. Ajuste específico para Tablets (iPad) y Móviles en VERTICAL (< 1024px) */
+@media (max-width: 1024px) and (orientation: portrait) {
+    button, 
+    .btn, 
+    .btn-primary, 
+    .btn-secondary, 
+    .btn-agendar-shimmer, 
+    a.button {
+        /* Ocupan el 90% del ancho disponible para no tocar los bordes */
+        width: 90% !important; 
+        margin-left: auto !important; /* Centrado automático */
+        margin-right: auto !important;
+        
+        /* Se vuelven bloques para centrarse mejor */
+        display: flex !important; 
+        
+        /* Texto un poco más grande para leer bien */
+        font-size: 16px !important; 
+        
+        /* Más espacio interno para tocar fácil con el dedo */
+        padding: 15px 20px !important; 
+    }
+    
+    /* Si el botón tiene texto muy largo,允许 que crezca en altura */
+    .btn-agendar-shimmer {
+        height: auto !important;
+        line-height: 1.4 !important;
+    }
+}
+
+/* 3. Ajuste extra para iPhones pequeños (< 480px) */
+@media (max-width: 480px) {
+    button, 
+    .btn, 
+    .btn-primary, 
+    .btn-secondary, 
+    .btn-agendar-shimmer {
+        width: 100% !important; /* Ocupa todo el ancho */
+        font-size: 14px !important; /* Un poco más pequeño si es necesario */
+        padding: 12px 15px !important;
+    }
+}
+
+/* 4. Corrección específica para el contenedor del Hero si empuja el botón */
+.hero-content, .container, section {
+    overflow-x: hidden !important; /* Evita scroll horizontal indeseado */
+    width: 100%;
+    max-width: 100%;
+}
+/* ============================================
+   FIN DEL PARCHE DE SEGURIDAD
+   ============================================ */
