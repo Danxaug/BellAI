@@ -1,0 +1,47 @@
+{
+  "company_info": {
+    "name": "BellAI",
+    "slogan": "Ingeniería Web, Automatización Inteligente y Sistemas de IA Cero Alucinaciones.",
+    "description": "En BellAI combinamos desarrollo ágil con IA neuro-simbólica. Fundada por Daniel Gamboa y Juan Pablo Botero en Cali, Colombia.",
+    "founders": ["Daniel Gamboa", "Juan Pablo Botero"],
+    "contact_whatsapp": "573174827958",
+    "calendly_link": "https://calendly.com/tu-usuario/diagnostico",
+    "location": "Cali, Colombia (Alcance Global)"
+  },
+  "services_levels": [
+    {
+      "level": 1,
+      "name": "BellAI Flow",
+      "tagline": "Vitrinas digitales de alto rendimiento.",
+      "description": "Plataformas ultrarrápidas (<2s) configuradas como máquinas de ventas.",
+      "ideal_for": "Clínicas, Software, Inmobiliarias, Logística.",
+      "key_results": "Tráfico convertido en caja, agendamiento sin fricción."
+    },
+    {
+      "level": 2,
+      "name": "BellAI Core",
+      "tagline": "Automatización Comercial 24/7.",
+      "description": "Agentes de calificación en WhatsApp y embudos de cierre automático.",
+      "ideal_for": "Inmobiliarias, Clínicas, E-commerce, SaaS.",
+      "key_results": "Leads calificados 24/7, reducción de tiempo de respuesta."
+    },
+    {
+      "level": 3,
+      "name": "BellAI Guard",
+      "tagline": "IA Neuro-Simbólica (Cero Alucinaciones).",
+      "description": "Soluciones que consultan bases de datos masivas para resultados exactos.",
+      "ideal_for": "Firmas Jurídicas, Aseguradoras, Bancos, Gobierno.",
+      "key_results": "Auditoría masiva, detección de fraude, cumplimiento normativo."
+    }
+  ],
+  "faq": [
+    {
+      "question": "¿Quiénes son los fundadores?",
+      "answer": "Daniel Gamboa y Juan Pablo Botero."
+    },
+    {
+      "question": "¿Qué significa 'Cero Alucinaciones'?",
+      "answer": "Nuestra IA no inventa respuestas. Combina LLMs con motores de datos duros para precisión matemática."
+    }
+  ]
+}
