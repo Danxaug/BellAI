@@ -1846,10 +1846,19 @@ body {
 }
 
 /* ============================================
-   🐕 BULLDOG DEL HERO (única versión, SIN zoom que corta texto)
+   /* ============================================
+   🐕 BULLDOG DEL HERO (Versión corregida SIN recortes feos)
    ============================================ */
 .bulldog-img {
-    object-position: center 25% !important;
+    /* Elimina el recorte forzado que causaba el parche */
+    object-position: center center !important;
+    
+    /* Asegura que la imagen se vea completa sin distorsiones */
+    object-fit: contain !important;
+    
+    /* Elimina cualquier efecto de sombra o brillo cuadrado */
+    box-shadow: none !important;
+    filter: none !important;
 }
 
 /* ============================================
