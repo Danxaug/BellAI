@@ -2322,9 +2322,9 @@ a.button,
    FIN DEL PARCHE DE SEGURIDAD
    ============================================ */
 
-   /* ============================================
-   🛑 PARCHE TEMPORAL: Eliminar recuadro feo del Bulldog
-   Autor: Daniel | Fecha: Hoy
+  /* ============================================
+    PARCHE CORREGIDO: Eliminar recuadro feo del Bulldog
+   Autor: Daniel | Fecha: 26 11 26
    Objetivo: Quitar sombras/fondos cuadrados que dañan la estética.
    TODO: Revisar y eliminar cuando se limpie el CSS base oficialmente.
    ============================================ */
@@ -2347,15 +2347,27 @@ div[class*="bulldog"] {
     /* Elimina bordes extraños */
     border: none !important;
     outline: none !important;
-    
-    /* Asegura que no haya elementos falsos (::before/::after) creando el cuadro */
-    &::before,
-    &::after {
-        content: none !important;
-        display: none !important;
-        background: none !important;
-        box-shadow: none !important;
-    }
+}
+
+/* Elimina elementos falsos (::before/::after) que crean el cuadro */
+.bulldog-img::before,
+.bulldog-img::after,
+img[alt*="bulldog"]::before,
+img[alt*="bulldog"]::after,
+img[src*="bulldog"]::before,
+img[src*="bulldog"]::after,
+.neural-network-svg::before,
+.neural-network-svg::after,
+.hero-neural-bg::before,
+.hero-neural-bg::after,
+div[class*="dog"]::before,
+div[class*="dog"]::after,
+div[class*="bulldog"]::before,
+div[class*="bulldog"]::after {
+    content: none !important;
+    display: none !important;
+    background: none !important;
+    box-shadow: none !important;
 }
 
 /* Si el recuadro viene de un contenedor padre específico */
@@ -2366,5 +2378,5 @@ main > div:first-child,
     box-shadow: none !important;
 }
 /* ============================================
-   FIN DEL PARCHE
+   FIN DEL PARCHE CORREGIDO
    ============================================ */
