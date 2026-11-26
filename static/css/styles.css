@@ -2321,3 +2321,50 @@ a.button,
 /* ============================================
    FIN DEL PARCHE DE SEGURIDAD
    ============================================ */
+
+   /* ============================================
+   🛑 PARCHE TEMPORAL: Eliminar recuadro feo del Bulldog
+   Autor: Daniel | Fecha: Hoy
+   Objetivo: Quitar sombras/fondos cuadrados que dañan la estética.
+   TODO: Revisar y eliminar cuando se limpie el CSS base oficialmente.
+   ============================================ */
+
+/* Aplica a cualquier imagen o contenedor del Bulldog */
+.bulldog-img, 
+img[alt*="bulldog"], 
+img[src*="bulldog"],
+.neural-network-svg,
+.hero-neural-bg,
+div[class*="dog"],
+div[class*="bulldog"] {
+    /* Elimina fondos cuadrados feos */
+    background: transparent !important;
+    background-image: none !important;
+    
+    /* Elimina sombras duras o brillos cuadrados */
+    box-shadow: none !important;
+    
+    /* Elimina bordes extraños */
+    border: none !important;
+    outline: none !important;
+    
+    /* Asegura que no haya elementos falsos (::before/::after) creando el cuadro */
+    &::before,
+    &::after {
+        content: none !important;
+        display: none !important;
+        background: none !important;
+        box-shadow: none !important;
+    }
+}
+
+/* Si el recuadro viene de un contenedor padre específico */
+.hero-section, 
+main > div:first-child, 
+.container > div:first-child {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+/* ============================================
+   FIN DEL PARCHE
+   ============================================ */
